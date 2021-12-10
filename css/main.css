@@ -1,0 +1,76 @@
+:root {
+  --fontColor: #111111;
+  /* Font/text values */
+  --fontFamily: sans-serif;
+  /* Positioning */
+  --content-width: 90%;
+  --content-max-width: 1400px;
+  --header-height: 70px;
+}
+
+* {
+  font-family: var(--fontFamily);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.start_banner {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  left: 10vw;
+  bottom: 2vh;
+  padding: 1% 1.5%;
+  background-color: #000;
+  border-radius: 10px;
+  transition: transform .15s ease-out;
+  box-shadow: 2px 2px 20px #00000011;
+}
+
+.start_banner#welcome_banner {
+  background-color: #000000cc;
+}
+
+.start_banner:hover {
+  transform: scale(1.02);
+  box-shadow: 4px 4px 25px #00000011;
+}
+
+.start_banner .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+}
+
+.start_banner .info span.icon {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.start_banner .info p {
+  color: #ffffff;
+  margin-left: 2%;
+}
+
+.start_banner button {
+  background-color: var(--primary);
+  border: none;
+  border-radius: 5px;
+  padding: 1.5% 3%;
+  transition: .2s ease;
+}
+
+.start_banner button:hover {
+  background-color: #dddddd;
+}
