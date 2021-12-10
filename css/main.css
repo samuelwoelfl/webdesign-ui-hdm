@@ -8,11 +8,45 @@
   --header-height: 70px;
 }
 
+:root[data-theme="theme-dark"] {
+  /* Colors: */
+  --primary: #6b31f5;
+  --primary-light: #865ee4;
+  --card-border: #FFFFFF12;
+  --bg-emphasize: #0C11154D;
+  --bg-dark: #0C1115;
+  --bg-lighter: #1F242A;
+  --text-primary: #FFFFFF;
+  --text-secondary: #FFFFFFB3;
+  --text-tertiary: #7B8898;
+  --shadow-color: #00000059;
+}
+
+:root[data-theme="theme-light"] {
+  --primary: #aff531;
+  --primary-light: #a1dc32;
+  --card-border: #00000012;
+  --bg-emphasize: #E6DDD44D;
+  --bg-dark: #f4f0eb;
+  --bg-lighter: #fbf8f5;
+  --text-primary: #161616;
+  --text-secondary: #161616B3;
+  --text-tertiary: #6e6e6e;
+  --shadow-color: #0000000f;
+}
+
 * {
   font-family: var(--fontFamily);
 }
 
+button {
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--primary);
+}
+
 button:hover {
+  background-color: var(--primary-light);
   cursor: pointer;
 }
 
@@ -64,13 +98,8 @@ button:active {
 }
 
 .start_banner button {
-  background-color: var(--primary);
   border: none;
   border-radius: 5px;
   padding: 1.5% 3%;
   transition: .2s ease;
-}
-
-.start_banner button:hover {
-  background-color: #dddddd;
 }
