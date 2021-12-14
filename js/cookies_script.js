@@ -7,7 +7,7 @@ $(document).ready(function() {
 
   var cookiesAccepted = Cookies.get('cookiesAccepted');
   if (cookiesAccepted === undefined) {
-    var cookiesAccepted = false;
+    cookiesAccepted = false;
   }
 
   var hoursBetweenGreetings = 5;
@@ -16,7 +16,7 @@ $(document).ready(function() {
 
   var welcomeShownTime = Cookies.get('welcomeShownTime');
   if (welcomeShownTime === undefined) {
-    var welcomeShownTime = fallbackTime;
+    welcomeShownTime = fallbackTime;
   }
 
   if (!cookiesAccepted) {
