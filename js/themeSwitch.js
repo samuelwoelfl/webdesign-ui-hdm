@@ -13,6 +13,7 @@ $(document).ready(function() {
 
   $sun.click(function() {
     switchTheme('dark');
+    // TODO: Set Cookie for theme
   });
   $moon.click(function() {
     switchTheme('light');
