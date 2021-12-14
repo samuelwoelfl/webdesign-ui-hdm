@@ -1,11 +1,23 @@
 $(document).ready(function() {
   const $sun = $("#sun_icon");
   const $moon = $("#moon_icon");
-
   const html = document.querySelector('html');
-  const isOsDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  if (isOsDark) {
+  var theme;
+  var cookiesTheme = Cookies.get('theme');
+  if (cookiesTheme === undefined) {
+    var systemTheme;
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      systemTheme = 'dark';
+    } else {
+      systemTheme = 'light';
+    }
+    theme = systemTheme;
+  } else {
+    theme = cookiesTheme;
+  }
+
+  if (theme == 'dark') {
     switchTheme('dark');
   } else {
     switchTheme('light');
@@ -30,6 +42,7 @@ $(document).ready(function() {
       $moon.show();
     }
     html.dataset.theme = `theme-${theme}`;
+    Cookies.set('theme', `${theme}`);
   }
 
 });
