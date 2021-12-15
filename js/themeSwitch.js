@@ -25,7 +25,6 @@ $(document).ready(function() {
 
   $sun.click(function() {
     switchTheme('dark');
-    // TODO: Set Cookie for theme
   });
   $moon.click(function() {
     switchTheme('light');
@@ -42,7 +41,9 @@ $(document).ready(function() {
       $moon.show();
     }
     html.dataset.theme = `theme-${theme}`;
-    Cookies.set('theme', `${theme}`);
+    if (Cookies.get('cookiesAccepted') == 'true') {
+      Cookies.set('theme', `${theme}`);
+    }
   }
 
 });
