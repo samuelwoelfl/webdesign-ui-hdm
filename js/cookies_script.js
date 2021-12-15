@@ -15,20 +15,19 @@ $(document).ready(function() {
     cookiesAccepted = false;
   }
 
-  var hoursBetweenGreetings = 5;
-  var today = new Date();
-  var fallbackTime = today - (1000 * 60 * 60 * hoursBetweenGreetings)
-
-  var welcomeShownTime = Cookies.get('welcomeShownTime');
-  if (welcomeShownTime === undefined) {
-    welcomeShownTime = fallbackTime;
+  hoursBetweenGreetings = 5;
+  var welcomeShown = Cookies.get('welcomeShown');
+  if (welcomeShown === undefined) {
+    welcomeShown = false;
   }
 
   if (!cookiesAccepted) {
     $cookieBanner.delay(2000).fadeIn(100);
-  } else if (welcomeShownTime <= fallbackTime) {
+  } else if (!welcomeShown) {
     showBanner($welcomeBanner);
-    Cookies.set('welcomeShownTime', Date.now());
+    Cookies.set('welcomeShown', true, {
+      expires: ((1 / 24) * hoursBetweenGreetings)
+    });
   }
 
   $acceptCookiesButton.click(function() {
