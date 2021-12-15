@@ -1,5 +1,4 @@
 :root {
-  --fontColor: #111111;
   /* Font/text values */
   --fontFamily: sans-serif;
   /* Positioning */
@@ -23,12 +22,12 @@
 }
 
 :root[data-theme="theme-light"] {
-  --primary: #aff531;
-  --primary-light: #a1dc32;
+  --primary: #6b31f5;
+  --primary-light: #865ee4;
   --card-border: #00000012;
   --bg-emphasize: #E6DDD44D;
-  --bg-dark: #f4f0eb;
-  --bg-lighter: #fbf8f5;
+  --bg-dark: #ffffff;
+  --bg-lighter: #eaeaea;
   --text-primary: #161616;
   --text-secondary: #161616B3;
   --text-tertiary: #6e6e6e;
@@ -37,7 +36,7 @@
 
 * {
   font-family: var(--fontFamily);
-  color: var(--text-primary)
+  color: var(--text-primary);
 }
 
 body {
@@ -69,19 +68,14 @@ button:active {
   left: 10vw;
   bottom: 2vh;
   padding: 1% 1.5%;
-  background-color: #000;
+  background-color: var(--bg-lighter);
   border-radius: 10px;
+  border: 1px solid var(--card-border);
   transition: transform .15s ease-out;
-  box-shadow: 2px 2px 20px #00000011;
-}
-
-.start_banner#welcome_banner {
-  background-color: #000000cc;
 }
 
 .start_banner:hover {
   transform: scale(1.02);
-  box-shadow: 4px 4px 25px #00000011;
 }
 
 .start_banner .info {
@@ -98,7 +92,7 @@ button:active {
 }
 
 .start_banner .info p {
-  color: #ffffff;
+  color: var(--text-primary);
   margin-left: 2%;
 }
 
@@ -107,4 +101,24 @@ button:active {
   border-radius: 5px;
   padding: 1% 3%;
   transition: .2s ease;
+}
+
+.progress-ring_circle {
+  stroke-dasharray: 62.8;
+  stroke-dashoffset: 62.8;
+  /* transition: 2s stroke-dashoffset linear; */
+  animation: dash 2.5s linear;
+  /* axis compensation */
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: 62.8;
+  }
 }
