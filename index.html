@@ -13,7 +13,7 @@
   <script src="js/themeSwitch.js" charset="utf-8"></script>
 
   <link rel="stylesheet" href="css/main.css">
-  <title>Document</title>
+  <title>Samuel Wölfl</title>
 </head>
 
 <body>
@@ -52,19 +52,44 @@
   <div id="cookie_banner" class="start_banner" style="display:none">
     <div class="info">
       <span class="icon">🍪</span>
-      <p>Für eine optimale Darstellung und Funktion verwendet unsere Website Cookies.</p>
+      <p>Für eine optimale Darstellung und Funktion verwendet unsere Website Cookies. <br>Unsere Cookies sind rein funktional und speichern zum Beispiel deine ausgewählte Darstellung</p>
     </div>
-    <button id="accept_cookies" type="button" name="button">Akzeptieren</button>
+    <button id="denie_cookies" class="secondary" type="button" name="button">Ablehnen</button>
+    <button id="accept_cookies" class="primary" type="button" name="button">Akzeptieren</button>
   </div>
-  <div id="welcome_banner" class="start_banner" style="display:none">
+
+  <div id="accepted_banner" class="start_banner" style="display:none" show-duration="2500">
+    <div class="info">
+      <span class="icon">😁</span>
+      <p>Gute Wahl!</p>
+    </div>
+    <svg class="progress-ring" width="32" height="32">
+      <circle class="progress-ring_circle" stroke-width="2" fill="transparent" r="10" cx="16" cy="16" />
+    </svg>
+  </div>
+
+  <div id="denied_banner" class="start_banner" style="display:none" show-duration="5000">
+    <div class="info">
+      <span class="icon">👍</span>
+      <p>Okay, du kannst deine Präferenz jederzeit ändern wenn du die Seite neu aufrufst.</p>
+    </div>
+    <svg class="progress-ring" width="32" height="32">
+      <circle class="progress-ring_circle" stroke-width="2" fill="transparent" r="10" cx="16" cy="16" />
+    </svg>
+  </div>
+
+  <div id="welcome_banner" class="start_banner" style="display:none" show-duration="3500">
     <div class="info">
       <span class="icon">👋</span>
       <p>Willkommen zurück!</p>
     </div>
+    <button id="reset_cookies" class="secondary" type="button" name="button">Cookie-Wahl zurücksetzen</button>
     <svg class="progress-ring" width="32" height="32">
-      <circle class="progress-ring_circle" stroke="var(--text-secondary)" stroke-width="2" fill="transparent" r="10" cx="16" cy="16" />
+      <circle class="progress-ring_circle" stroke-width="2" fill="transparent" r="10" cx="16" cy="16" />
     </svg>
   </div>
+
+
 
 </body>
 

@@ -35,8 +35,13 @@
 }
 
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: var(--fontFamily);
   color: var(--text-primary);
+  transition: background-color .2s ease;
+  transition: color .2s ease;
 }
 
 body {
@@ -45,13 +50,32 @@ body {
 
 button {
   font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 1% 3%;
+  transition: .2s ease;
+}
+
+button.primary {
   color: #fff;
   background-color: var(--primary);
 }
 
+button.secondary {
+  color: var(--text-primary);
+  background-color: var(--bg-emphasize);
+}
+
 button:hover {
-  background-color: var(--primary-light);
   cursor: pointer;
+}
+
+button.primary:hover {
+  background-color: var(--primary-light);
+}
+
+button.secondary:hover {
+  background-color: var(--bg-dark);
 }
 
 button:active {
@@ -96,21 +120,19 @@ button:active {
   margin-left: 2%;
 }
 
-.start_banner button {
-  border: none;
-  border-radius: 5px;
-  padding: 1% 3%;
-  transition: .2s ease;
+.start_banner button#denie_cookies {
+  margin-right: 10px;
 }
 
 .progress-ring_circle {
   stroke-dasharray: 62.8;
   stroke-dashoffset: 62.8;
-  /* transition: 2s stroke-dashoffset linear; */
-  animation: dash 2.5s linear;
-  /* axis compensation */
+  animation: dash;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
+  stroke: var(--text-primary);
 }
 
 @keyframes dash {
