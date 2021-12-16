@@ -40,12 +40,14 @@
   box-sizing: border-box;
   font-family: var(--fontFamily);
   color: var(--text-primary);
-  transition: background-color .2s ease;
-  transition: color .2s ease;
+  transition: background-color .5s ease, color .5s ease;
+  /* transition: color .2s ease; */
 }
 
 body {
   background-color: var(--bg-dark);
+  /* transition: background-color 2s ease; */
+  padding: 0 2%;
 }
 
 button {
@@ -148,8 +150,13 @@ button:active {
 input {
   font-size: 1em;
   padding: .7% .5%;
-  margin: 1% 0 4% 0;
+  margin: 1% 0 1% 0;
   background-color: var(--bg-lighter);
   border: 1px solid var(--card-border);
   border-radius: 3px;
+}
+
+h3 {
+  margin-top: 4%;
+  margin-bottom: 1%;
 }
