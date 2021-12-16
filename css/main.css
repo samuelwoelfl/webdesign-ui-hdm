@@ -144,3 +144,12 @@ button:active {
     stroke-dashoffset: 62.8;
   }
 }
+
+input {
+  font-size: 1em;
+  padding: .7% .5%;
+  margin: 1% 0 4% 0;
+  background-color: var(--bg-lighter);
+  border: 1px solid var(--card-border);
+  border-radius: 3px;
+}

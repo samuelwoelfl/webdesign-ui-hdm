@@ -46,19 +46,18 @@ $(document).ready(function() {
     deleteAllCookies();
     showBanner($deniedBanner);
   });
-
-  function showBanner($banner) {
-    var showDuration = $banner.attr("show-duration");
-    $banner.find('.progress-ring_circle').css('animation-duration', `${showDuration / 1000}s`);
-    $banner.fadeIn(100);
-    $banner.delay(showDuration).fadeOut(100);
-  }
-
-  function deleteAllCookies() {
-    var cookies = Cookies.get();
-    for (const cookie in cookies) {
-      Cookies.remove(cookie);
-    }
-  }
-
 });
+
+function showBanner($banner) {
+  var showDuration = $banner.attr("show-duration");
+  $banner.find('.progress-ring_circle').css('animation-duration', `${showDuration / 1000}s`);
+  $banner.fadeIn(100);
+  $banner.delay(showDuration).fadeOut(100);
+}
+
+function deleteAllCookies() {
+  var cookies = Cookies.get();
+  for (const cookie in cookies) {
+    Cookies.remove(cookie);
+  }
+}
