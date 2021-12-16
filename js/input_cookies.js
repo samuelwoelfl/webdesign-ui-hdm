@@ -1,8 +1,10 @@
 $(document).ready(function() {
 
-  fillInputs($("input:not([type=submit])"));
+  var $inputs = $("input:not([type=submit])")
 
-  $("input:not([type=submit])").on("input", function() {
+  fillInputs($inputs);
+
+  $inputs.on("input", function() {
     var name = $(this).attr('name');
     var value = $(this).val();
     if (Cookies.get('cookiesAccepted') == 'true' && value != "") {
