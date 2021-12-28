@@ -1,12 +1,19 @@
 $(document).ready(function() {
+
+  // Beim Laden der Seite sollte die Theme Transition noch nicht smooth sondern möglichst unauffällig stattfinden und deswegen wird die transition erst nach dem Laden eingefügt
+  // setTimeout(function () {
+  //   $("body").css("transition","background-color .5s ease, color .5s ease");
+  // }, 100);
+
+  // Elemente aus HTML bekommen
   const $sun = $("#sun_icon");
   const $moon = $("#moon_icon");
   const html = document.querySelector('html');
 
-  var theme;
-  var cookiesTheme = Cookies.get('theme');
+  let theme;
+  let cookiesTheme = Cookies.get('theme');
   if (cookiesTheme === undefined) {
-    var systemTheme;
+    let systemTheme;
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       systemTheme = 'dark';
     } else {

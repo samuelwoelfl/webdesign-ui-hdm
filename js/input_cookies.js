@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
-  var $inputs = $("input:not([type=submit])")
+  let $inputs = $("input:not([type=submit])")
 
   fillInputs($inputs);
 
   $inputs.on("input", function() {
-    var name = $(this).attr('name');
-    var value = $(this).val();
+    let name = $(this).attr('name');
+    let value = $(this).val();
     if (Cookies.get('cookiesAccepted') == 'true' && value != "") {
       Cookies.set(name + '-inputCookie', value);
     }
@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 function fillInputs($inputs) {
   $.each($inputs, function(i, item) {
-    var value = Cookies.get($(this).attr('name') + '-inputCookie')
+    let value = Cookies.get($(this).attr('name') + '-inputCookie')
     $(this).val(value);
   });
 }
