@@ -1,6 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'NeueMetana';
+  src: url('../font/NeueMetana-Bold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeueMetana';
+  src: url('../font/NeueMetana-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   /* Font/text values */
-  --fontFamily: sans-serif;
+  --fontFamily: 'Space Grotesk', sans-serif;
   /* Positioning */
   --content-width: 90%;
   --content-max-width: 1400px;
