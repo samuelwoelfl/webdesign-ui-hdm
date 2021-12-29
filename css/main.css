@@ -142,6 +142,10 @@ span.icon {
   margin-right: 10px;
 }
 
+.banner_close_button:hover {
+  cursor: pointer;
+}
+
 .progress-ring_circle {
   stroke-dasharray: 62.8;
   stroke-dashoffset: 62.8;

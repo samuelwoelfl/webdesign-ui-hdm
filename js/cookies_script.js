@@ -8,11 +8,12 @@ let $acceptCookiesButton;
 let $denieCookiesButton;
 let $resetCookiesButton;
 let $toggleCookiesButton;
+let $bannerCloseButton;
 let $cookieToggleModal;
+
 
 // Define all functions
 function acceptCookies() {
-  console.log('accept cookies');
   Cookies.set('cookiesAccepted', true);
   $toggleCookiesButton.html("Cookie-Wahl zurücksetzen");
   showToast($acceptedBanner);
@@ -55,7 +56,8 @@ $(document).ready(function() {
   $resetCookiesButton = $("#reset_cookies");
   $toggleCookiesButton = $("#toogle_cookies_button");
   $toggleCookiesButton = $("#toogle_cookies_button");
-  $cookieToggleModal = $(".cookie_toggle_modal");
+  // weitere Elemente
+  $cookieToggleModal = $(".cookie_toggle_modal"); $bannerCloseButtons = $(".banner_close_button");
 
   let cookiesAccepted = Cookies.get('cookiesAccepted');
   if (cookiesAccepted === undefined) {
@@ -100,5 +102,9 @@ $(document).ready(function() {
     } else {
       acceptCookies();
     }
+  });
+
+  $bannerCloseButtons.click(function() {
+    $banners.fadeOut(100);
   });
 });
