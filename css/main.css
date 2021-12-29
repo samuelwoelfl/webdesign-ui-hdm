@@ -85,12 +85,13 @@ button:active {
 
 .start_banner {
   position: absolute;
+  z-index: 10;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 80vw;
-  left: 10vw;
+  width: 60vw;
+  left: 20vw;
   bottom: 2vh;
   padding: 1% 1.5%;
   background-color: var(--bg-lighter);
@@ -111,7 +112,7 @@ button:active {
   width: 80%;
 }
 
-.start_banner .info span.icon {
+span.icon {
   font-size: 1.5em;
   margin-bottom: 5px;
 }
@@ -158,4 +159,50 @@ input {
 h3 {
   margin-top: 4%;
   margin-bottom: 1%;
+}
+
+.cookie_toggle_modal {
+  position: absolute;
+  right: 2vh;
+  bottom: 2vh;
+  padding: .8%;
+  background-color: var(--bg-dark);
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  transition: .2s ease-out;
+  z-index: 9;
+}
+
+.cookie_toggle_modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cookie_toggle_modal .hidden {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 0px;
+  height: 100%;
+  transition: .2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left: 3%;
+}
+
+
+.cookie_toggle_modal:hover {
+  background-color: var(--bg-lighter);
+  cursor: pointer;
+}
+
+.cookie_toggle_modal:hover > .hidden {
+  width: 390px;
+}
+
+#toogle_cookies_button {
+  padding: 3% 5%;
 }
