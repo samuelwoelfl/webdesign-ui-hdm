@@ -189,7 +189,7 @@ h3 {
   background-color: var(--bg-dark);
   border-radius: 10px;
   border: 1px solid var(--card-border);
-  transition: .2s ease-out;
+  transition: .3s ease;
   z-index: 9;
 }
 
@@ -205,12 +205,17 @@ h3 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 0px;
+  max-width: 0px;
   height: 100%;
-  transition: .2s ease;
-  white-space: nowrap;
+  transition: .3s ease;
   overflow: hidden;
   margin-left: 3%;
+}
+
+.cookie_toggle_modal .hidden button {
+  white-space: nowrap;
+  width: 250px;
+  margin-left: 5%;
 }
 
 
@@ -220,7 +225,7 @@ h3 {
 }
 
 .cookie_toggle_modal:hover > .hidden {
-  width: 390px;
+  max-width: 420px;
 }
 
 #toogle_cookies_button {
