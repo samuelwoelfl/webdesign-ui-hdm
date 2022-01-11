@@ -35,6 +35,7 @@
   --text-secondary: #FFFFFFB3;
   --text-tertiary: #7B8898;
   --shadow-color: #00000059;
+  --error-color: #e9e81f;
 }
 
 :root[data-theme="theme-light"] {
@@ -48,6 +49,7 @@
   --text-secondary: #161616B3;
   --text-tertiary: #6e6e6e;
   --shadow-color: #0000000f;
+  --error-color: #b9a00e;
 }
 
 * {
@@ -97,6 +99,26 @@ button.secondary:hover {
 
 button:active {
   transform: scale(0.95);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+input.error {
+  border-color: var(--error-color);
+}
+
+.error_message:before {
+  content: "⚠️";
+  margin-right: 3px;
+  font-size: 1rem;
+}
+
+.error_message {
+  color: var(--error-color);
+  font-size: 0.9rem;
 }
 
 .start_banner {
@@ -167,10 +189,16 @@ span.icon {
   }
 }
 
+label {
+  display: block;
+  margin: 1.4% 0 .5% 0;
+}
+
 input {
+  display: block;
   font-size: 1em;
   padding: .7% .5%;
-  margin: 1% 0 1% 0;
+  margin: .2% 0 0% 0;
   background-color: var(--bg-lighter);
   border: 1px solid var(--card-border);
   border-radius: 3px;
@@ -218,13 +246,12 @@ h3 {
   margin-left: 5%;
 }
 
-
 .cookie_toggle_modal:hover {
   background-color: var(--bg-lighter);
   cursor: pointer;
 }
 
-.cookie_toggle_modal:hover > .hidden {
+.cookie_toggle_modal:hover>.hidden {
   max-width: 420px;
 }
 

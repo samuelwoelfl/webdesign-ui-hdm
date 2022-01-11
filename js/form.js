@@ -19,16 +19,27 @@ $(document).ready(function() {
     validateInput($(this));
   });
 
-  // $inputs.on("blur", function() {
-  //   validateInput($(this));
-  // });
+  $inputs.on("blur", function() {
+    validateInput($(this), false, false);
+  });
+
+  // TODO: fix this
+  window.onbeforeunload = function() {
+    if (isDirty) {
+      return 'There is unsaved data.';
+    }
+    return undefined;
+  }
 
 });
 
 
-function validateInput(input, focus) {
+function validateInput(input, focus, highlight) {
   if (focus === undefined) {
     focus = false;
+  }
+  if (highlight === undefined) {
+    highlight = false;
   }
   input = $(input);
   let value = input.val();
@@ -57,29 +68,36 @@ function validateInput(input, focus) {
   if (message.length > 0) {
     if (nextElemClass == "error_message") {
       nextElem.html(`${message}`);
+      if (highlight) {
+        nextElem.effect("bounce", "slow");
+      }
     } else {
       $(`input#${id}`).get()[0].insertAdjacentHTML("afterend",
         `<p class="error_message">${message}</p>`);
     }
+    input.addClass("error");
     if (focus) {
       $(`input#${id}`)[0].focus();
     }
+    return false
   } else {
     if (nextElemClass == "error_message") {
       nextElem.remove();
+      input.removeClass("error");
     }
   }
+
 }
 
-
-function validateMail() {
-  $.each($inputs, function(i, input) {
-    validateInput(input, true);
-  });
-}
 
 function sendMail() {
-  validateMail();
+  let valids = [];
+  $.each($inputs, function(i, input) {
+    valids.push(validateInput(input, true, true));
+  });
+  if (!valids.includes(false)) {
+    window.open('mailto:test@example.com?subject=subject&body=body');
+  }
 }
 
 
