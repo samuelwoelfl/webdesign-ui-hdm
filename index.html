@@ -11,13 +11,27 @@
 
   <script src="js/cookies_script.js" charset="utf-8"></script>
   <script src="js/themeSwitch.js" charset="utf-8"></script>
-  <script src="js/input_cookies.js" charset="utf-8"></script>
+  <script src="js/form.js" charset="utf-8"></script>
 
   <link rel="stylesheet" href="css/main.css">
   <title>Samuel Wölfl</title>
 </head>
 
 <body>
+
+  <header>
+    <div class="left">
+      <img src="img/logo_white." alt="">
+      <span>Samuel Wölfl</span>
+    </div>
+    <div class="right">
+      <nav>
+        <a href="galerie.html">Galerie</a>
+        <a href="portfolio">Portfolio</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
 
   <div class="cookie_toggle_modal">
     <span class="icon">🍪</span>
@@ -101,7 +115,7 @@
   </div>
 
   <h3>Test input refill with cookies</h3>
-  <form action="/action_page.php">
+  <form action="javascript:sendMail()">
     <label for="prename">First name:</label><br>
     <input type="text" id="prename" name="prename" value=""><br>
     <label for="name">Last name:</label><br>

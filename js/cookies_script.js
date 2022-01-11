@@ -12,35 +12,6 @@ let $bannerCloseButton;
 let $cookieToggleModal;
 
 
-// Define all functions
-function acceptCookies() {
-  Cookies.set('cookiesAccepted', true);
-  $toggleCookiesButton.html("Cookie-Wahl zurücksetzen");
-  showToast($acceptedBanner);
-}
-
-function resetCookies() {
-  deleteAllCookies();
-  $toggleCookiesButton.html("Cookies akzeptieren");
-  showToast($deniedBanner);
-}
-
-function showToast($banner) {
-  let showDuration = $banner.attr("show-duration");
-  $banner.find('.progress-ring_circle').css('animation-duration', `${showDuration / 1000}s`);
-  $banner.fadeIn(100);
-  setTimeout(function() {
-    $banner.fadeOut(100);
-  }, showDuration);
-}
-
-function deleteAllCookies() {
-  let cookies = Cookies.get();
-  for (let cookie in cookies) {
-    Cookies.remove(cookie);
-  }
-}
-
 // Document ready function for all triggering stuff
 $(document).ready(function() {
 
@@ -108,3 +79,33 @@ $(document).ready(function() {
     $banners.fadeOut(100);
   });
 });
+
+
+// Define all functions
+function acceptCookies() {
+  Cookies.set('cookiesAccepted', true);
+  $toggleCookiesButton.html("Cookie-Wahl zurücksetzen");
+  showToast($acceptedBanner);
+}
+
+function resetCookies() {
+  deleteAllCookies();
+  $toggleCookiesButton.html("Cookies akzeptieren");
+  showToast($deniedBanner);
+}
+
+function showToast($banner) {
+  let showDuration = $banner.attr("show-duration");
+  $banner.find('.progress-ring_circle').css('animation-duration', `${showDuration / 1000}s`);
+  $banner.fadeIn(100);
+  setTimeout(function() {
+    $banner.fadeOut(100);
+  }, showDuration);
+}
+
+function deleteAllCookies() {
+  let cookies = Cookies.get();
+  for (let cookie in cookies) {
+    Cookies.remove(cookie);
+  }
+}
