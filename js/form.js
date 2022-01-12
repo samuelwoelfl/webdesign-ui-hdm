@@ -10,7 +10,7 @@ let errorMessageInvalidMail = "Dies ist keine valide Mail";
 // initialize her so the counting is set
 let mailBlurValidations = 0;
 
-// the standard query function to run stuff after the DOM is build so that everything is available
+// the standard jquery function to run stuff after the DOM is build so that everything is available
 $(document).ready(function() {
 
   // populate the inputs variable since nearly everything is using it here
@@ -20,7 +20,7 @@ $(document).ready(function() {
   // run the fillInputs function with all inputs to populate them with the available values from cookies
   fillInputs($inputs);
 
-  // safe an input value to a cookie when the input value changes
+  // add an event listener to safe an input value to a cookie when the input value changes
   $inputs.on("input", function() {
     // get name attribute of input
     let name = $(this).attr('name');
