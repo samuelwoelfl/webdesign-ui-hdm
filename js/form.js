@@ -1,6 +1,6 @@
 let $inputs;
-let valid;
 let mailId = "mail";
+let mailBlurValidations = 0;
 let errorMessageEmpty = "Dieses Feld muss ausgefüllt werden";
 let errorMessageInvalidMail = "Dies ist keine valide Mail";
 
@@ -16,11 +16,24 @@ $(document).ready(function() {
     if (Cookies.get('cookiesAccepted') == 'true') {
       Cookies.set(name + '-inputCookie', value);
     }
-    validateInput($(this));
+    if ($(this).attr("id") == mailId) {
+      if (mailBlurValidations == 0) {
+        setTimeout(function() {
+            validateInput($(this));
+        }, 2000);
+      } else {
+        validateInput($(this))
+      }
+    } else {
+      validateInput($(this));
+    }
   });
 
   $inputs.on("blur", function() {
-    validateInput($(this), false, false);
+    validateInput($(this));
+    if ($(this).attr("id") == mailId) {
+      mailBlurValidations += 1;
+    }
   });
 
   // TODO: fix this
@@ -44,8 +57,8 @@ function validateInput(input, focus, highlight) {
   input = $(input);
   let value = input.val();
   let id = input.attr("id");
-  let nextElem = input.next();
-  let nextElemClass = nextElem.attr("class");
+  let $nextElem = input.next();
+  let $nextElemClass = $nextElem.attr("class");
   let selector = ".error" + "[for='" + input.attr("id") + "']";
   let message = "";
 
@@ -66,10 +79,10 @@ function validateInput(input, focus, highlight) {
   }
 
   if (message.length > 0) {
-    if (nextElemClass == "error_message") {
-      nextElem.html(`${message}`);
+    if ($nextElemClass == "error_message") {
+      $nextElem.html(`${message}`);
       if (highlight) {
-        nextElem.effect("bounce", "slow");
+        $nextElem.effect("bounce", "slow");
       }
     } else {
       $(`input#${id}`).get()[0].insertAdjacentHTML("afterend",
@@ -81,8 +94,8 @@ function validateInput(input, focus, highlight) {
     }
     return false
   } else {
-    if (nextElemClass == "error_message") {
-      nextElem.remove();
+    if ($nextElemClass == "error_message") {
+      $nextElem.remove();
       input.removeClass("error");
     }
   }
