@@ -36,7 +36,7 @@ $(document).ready(function() {
       // if this field hasn't been leaved ("blurred") before or in other words it's the first time the user uses it, it should not directly fire the validation on every change since the first characters will never be valid even if the user will insert a valid mail
       // it will start to validate on change if the users selects it for the second time or more to for example correct his error => then this is helpful, because he will directly see if his changes made the email valid and not only when he leaves the field
       if (mailBlurValidations != 0) {
-        validateInput($(this))
+        validateInput($(this));
       }
     // if it's any other input it will just validate on every change since this is the most convenient option for the user => he instantly sees the error he made
     } else {
