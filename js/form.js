@@ -38,7 +38,7 @@ $(document).ready(function() {
       if (mailBlurValidations != 0) {
         validateInput($(this));
       }
-    // if it's any other input it will just validate on every change since this is the most convenient option for the user => he instantly sees the error he made
+      // if it's any other input it will just validate on every change since this is the most convenient option for the user => he instantly sees the error he made
     } else {
       validateInput($(this));
     }
@@ -98,10 +98,11 @@ function validateInput(input, focus, highlight) {
   // choose which error message should be shown
   if (value == "") {
     message = errorMessageEmpty;
-  // if it is already filled and it's the mail input check if it's valid
+    // if it is already filled and it's the mail input check if it's valid
   } else if (input.attr("id") == mailId) {
     // count the @ and dots with a simple regex to check if it's really an email
-    // regex explanaition: the character between the slashes is the character that will be searched and the g states that it should search for every occurence and not only the first
+    // regex explanation: the character between the slashes is the character that will be searched and the g states that it should search for every occurence and not only the first
+    // the || is there to return an empty list if the regex won't find a character to prevent the .length() from throwing an error
     let countAt = (value.match(/@/g) || []).length;
     // the backslash infront of the dot just works as an escape character to prevent the dot from being interpreted as regex
     let countDot = (value.match(/\./g) || []).length;
@@ -124,7 +125,7 @@ function validateInput(input, focus, highlight) {
       if (highlight) {
         $nextElem.effect("bounce", "slow");
       }
-    // if there is no error message create one
+      // if there is no error message create one
     } else {
       // create the error message with a formatted string and put it in the DOM right after the corresponding input by using the vanilla js function insertAdjacentHTML (also tried jquery functions but they didn't completely work).
       // used document.querySelector here to directly get the html object and not the jquery object since we need to use a vanilla js function
@@ -140,7 +141,7 @@ function validateInput(input, focus, highlight) {
     // return false in the end of all error message stuff to forther work with it
     return false
 
-  // if there is no error this time clear potential error messages from bevore and return true
+    // if there is no error this time clear potential error messages from bevore and return true
   } else {
     // check if there already is an error message
     if ($nextElemClass == "error_message") {
