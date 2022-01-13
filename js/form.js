@@ -88,6 +88,14 @@ function validateInput(input, focus, highlight) {
   let value = input.val();
   // get id of input
   let id = input.attr("id");
+  // red out the custom attribute "optional" to check if the input is required
+  let optional = input.attr("optional");
+  // if the attribute is "true" it will be true and in every other case (if it's not set or set to "false" for example) it will be false
+  if (optional == "true") {
+    optional = true;
+  } else {
+    optional = false;
+  }
   // get next element of input
   let $nextElem = input.next();
   // get class of next element to check if this input already has an error message
@@ -96,7 +104,7 @@ function validateInput(input, focus, highlight) {
   let message = "";
 
   // choose which error message should be shown
-  if (value == "") {
+  if (value == "" && !optional) {
     message = errorMessageEmpty;
     // if it is already filled and it's the mail input check if it's valid
   } else if (input.attr("id") == mailId) {
