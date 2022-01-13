@@ -27,6 +27,7 @@
   /* Colors: */
   --primary: #6b31f5;
   --primary-light: #865ee4;
+  --secondary: #e9e81f;
   --card-border: #FFFFFF12;
   --bg-emphasize: #0C11154D;
   --bg-dark: #0C1115;
@@ -35,12 +36,12 @@
   --text-secondary: #FFFFFFB3;
   --text-tertiary: #7B8898;
   --shadow-color: #00000059;
-  --error-color: #e9e81f;
 }
 
 :root[data-theme="theme-light"] {
   --primary: #6b31f5;
   --primary-light: #865ee4;
+  --secondary: #b9a00e;
   --card-border: #00000012;
   --bg-emphasize: #E6DDD44D;
   --bg-dark: #ffffff;
@@ -49,7 +50,6 @@
   --text-secondary: #161616B3;
   --text-tertiary: #6e6e6e;
   --shadow-color: #0000000f;
-  --error-color: #b9a00e;
 }
 
 * {
@@ -107,7 +107,7 @@ input:focus {
 }
 
 input.error {
-  border-color: var(--error-color);
+  border-color: var(--secondary);
 }
 
 .error_message:before {
@@ -117,7 +117,7 @@ input.error {
 }
 
 .error_message {
-  color: var(--error-color);
+  color: var(--secondary);
   font-size: 0.9rem;
 }
 
@@ -257,4 +257,14 @@ h3 {
 
 #toogle_cookies_button {
   padding: 3% 5%;
+}
+
+.scrollBar1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  background: var(--primary);
+  transition: width 200ms var(--timing);
 }
