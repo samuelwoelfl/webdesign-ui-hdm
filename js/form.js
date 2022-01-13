@@ -104,9 +104,13 @@ function validateInput(input, focus, highlight) {
   let message = "";
 
   // choose which error message should be shown
-  if (value == "" && !optional) {
-    message = errorMessageEmpty;
-    // if it is already filled and it's the mail input check if it's valid
+  // if the input is empty
+  if (value == "") {
+    // and if the input is not market as optional (not set with && for the else, because the else should be independent from the optional property)
+    if (!optional) {
+      message = errorMessageEmpty;
+    }
+    // if the input is filled (comes from the if) and it's id is the mailID check for mail validation => if it's empty it's enough to check for requirement because it's allowed to leave it empty. But if the user wants to fill the input it should be valid indepented from the fact that it's optional
   } else if (input.attr("id") == mailId) {
     // count the @ and dots with a simple regex to check if it's really an email
     // regex explanation: the character between the slashes is the character that will be searched and the g states that it should search for every occurence and not only the first
@@ -120,8 +124,31 @@ function validateInput(input, focus, highlight) {
       message = "";
     } else {
       message = errorMessageInvalidMail;
+      // add more information for the user if the input is optional
+      if (optional) {
+        message += " - Da das Feld optional ist, kann es auch komplett leer gelassen werden."
+      }
     }
   }
+
+  // if (value == "" && !optional) {
+  //   message = errorMessageEmpty;
+  //   // if it is already filled and it's the mail input check if it's valid
+  // } else if (input.attr("id") == mailId) {
+  //   // count the @ and dots with a simple regex to check if it's really an email
+  //   // regex explanation: the character between the slashes is the character that will be searched and the g states that it should search for every occurence and not only the first
+  //   // the || is there to return an empty list if the regex won't find a character to prevent the .length() from throwing an error
+  //   let countAt = (value.match(/@/g) || []).length;
+  //   // the backslash infront of the dot just works as an escape character to prevent the dot from being interpreted as regex
+  //   let countDot = (value.match(/\./g) || []).length;
+  //
+  //   // the final validation => check if the mail has exactly one @ and minimum one dot and set the error message regarding the result
+  //   if (countAt == 1 && countDot >= 1) {
+  //     message = "";
+  //   } else {
+  //     message = errorMessageInvalidMail;
+  //   }
+  // }
 
   // check if there is an error - which is recognized by the error message
   if (message.length > 0) {
