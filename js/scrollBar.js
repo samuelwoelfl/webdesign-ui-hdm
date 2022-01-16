@@ -6,5 +6,5 @@ $(document).scroll(function(e) {
   var scrollRounded = Math.round(scrollPercent);
 
   // For scrollbar 1
-  $(".scrollBar1").css("width", scrollPercent + "%");
+  $(".scrollBar").css("width", scrollPercent + "%");
 });
