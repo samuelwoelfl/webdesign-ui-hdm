@@ -36,17 +36,17 @@ $(document).ready(function() {
       // if this field hasn't been leaved ("blurred") before or in other words it's the first time the user uses it, it should not directly fire the validation on every change since the first characters will never be valid even if the user will insert a valid mail
       // it will start to validate on change if the users selects it for the second time or more to for example correct his error => then this is helpful, because he will directly see if his changes made the email valid and not only when he leaves the field
       if (mailBlurValidations != 0) {
-        validateInput($(this));
+        validateInput(this);
       }
       // if it's any other input it will just validate on every change since this is the most convenient option for the user => he instantly sees the error he made
     } else {
-      validateInput($(this));
+      validateInput(this);
     }
   });
 
   // Also add the validation on blur so the user sees if he made an error directly after leaving the field even if he didn't make any changes => extra important for the first time the user puts in his mail because the onchange validation is deactivatet there
   $inputs.on("blur", function() {
-    validateInput($(this));
+    validateInput(this);
     // count up the mail blur validations so it knows that it can now use the onchange validation
     if ($(this).attr("id") == mailId) {
       mailBlurValidations += 1;
@@ -176,7 +176,7 @@ function validateInput(input, focus, highlight) {
     // return false in the end of all error message stuff to forther work with it
     return false
 
-    // if there is no error this time clear potential error messages from bevore and return true
+    // if there is no error this time clear potential error messages from before and return true
   } else {
     // check if there already is an error message
     if ($nextElemClass == "error_message") {
