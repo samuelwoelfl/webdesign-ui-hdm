@@ -1,9 +1,9 @@
 $(document).scroll(function(e) {
-  var scrollAmount = $(window).scrollTop();
-  var documentHeight = $(document).height();
-  var windowHeight = $(window).height();
-  var scrollPercent = (scrollAmount / (documentHeight - windowHeight)) * 100;
-  var scrollRounded = Math.round(scrollPercent);
+  let scrollAmount = $(window).scrollTop();
+  let documentHeight = $(document).height();
+  let windowHeight = $(window).height();
+  let scrollPercent = (scrollAmount / (documentHeight - windowHeight)) * 100;
+  let scrollRounded = Math.round(scrollPercent);
 
   $(".scrollBar").css("width", scrollPercent + "%");
 });

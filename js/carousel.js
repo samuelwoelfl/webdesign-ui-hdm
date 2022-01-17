@@ -1,15 +1,12 @@
 // set speed => metric is how many elements should be scrolled per click if all have the same size
 let speed = 1.5;
 // set if you want autoscroll and if so how many seconds should be between each scroll
-let autoScroll = true;
-let autoScrollSeconds = 3;
+let autoScroll = false;
+let autoScrollSeconds = 4;
 
 // other variables for global scope
 let recTranslate = 0;
-let carouselList;
-let widthToScroll;
-let translateIncrem;
-let autoScrollInterval;
+let carouselList, widthToScroll, translateIncrem, autoScrollInterval;
 
 // window on load since we need to wait till the images are loaded here
 $(window).on("load", function() {

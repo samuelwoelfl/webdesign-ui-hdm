@@ -1,17 +1,17 @@
 // initialize variables for global scope
-let $banners;
-let $cookieBanner;
-let $acceptedBanner;
-let $deniedBanner;
-let $welcomeBanner;
-let $acceptCookiesButton;
-let $denieCookiesButton;
-let $resetCookiesButton;
-let $toggleCookiesButton;
-let $bannerCloseButton;
-let $cookieToggleModal;
+let $banners,
+  $cookieBanner,
+  $acceptedBanner,
+  $deniedBannerlet,
+  $welcomeBannerlet,
+  $acceptCookiesButtonlet,
+  $denieCookiesButtonlet,
+  $resetCookiesButtonlet,
+  $toggleCookiesButtonlet,
+  $bannerCloseButtonlet,
+  $cookieToggleModallet;
 // set time between greetings so it doens't greet you everytime you switch to a subpage or refresh the page
-let hoursBetweenGreetings = 1/2;
+let hoursBetweenGreetings = 1 / 2;
 
 
 // the standard jquery function to run stuff after the DOM is build so that everything is available
@@ -30,14 +30,15 @@ $(document).ready(function() {
   $toggleCookiesButton = $("#toogle_cookies_button");
   $toggleCookiesButton = $("#toogle_cookies_button");
   // get other elements from html
-  $cookieToggleModal = $(".cookie_toggle_modal"); $bannerCloseButtons = $(".banner_close_button");
+  $cookieToggleModal = $(".cookie_toggle_modal");
+  $bannerCloseButtons = $(".banner_close_button");
 
   // get the cookiesAccepted cookie - if it doens't exist it will return false
   let cookiesAccepted = Cookies.get('cookiesAccepted');
   // set it fo false if it was undefined
   if (cookiesAccepted === undefined) {
     cookiesAccepted = false;
-  // set it to boolean true if it returns the string "true"
+    // set it to boolean true if it returns the string "true"
   } else if (cookiesAccepted == "true") {
     cookiesAccepted = true;
   }
@@ -47,7 +48,7 @@ $(document).ready(function() {
   // set it fo false if it was undefined
   if (welcomeShown === undefined) {
     welcomeShown = false;
-  // set it to boolean true if it returns the string "true"
+    // set it to boolean true if it returns the string "true"
   } else if (welcomeShown == "true") {
     welcomeShown = true;
   }
@@ -58,7 +59,7 @@ $(document).ready(function() {
     setTimeout(function() {
       $cookieBanner.fadeIn(100);
     }, 2000);
-  // if he accepted cookies
+    // if he accepted cookies
   } else {
     // adjust the button text in the bottom right modal
     $toggleCookiesButton.html("Cookie-Wahl zurücksetzen");

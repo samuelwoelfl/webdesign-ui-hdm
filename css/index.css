@@ -1,3 +1,62 @@
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.landingpage {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.landingpage .content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.landingpage .content h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--secondary);
+  z-index: 50;
+}
+
+.landingpage .content h2 span {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+.landingpage .content h1 {
+  font-size: 4.5rem;
+  width: 80%;
+  z-index: 50;
+}
+
+.landingpage .content h1 span.hightlight {
+  color: var(--primary);
+}
+
+#profile_picture {
+  display: none;
+  width: 30vw;
+  position: absolute;
+  right: 17vw;
+  top: 24vh;
+  z-index: 2;
+}
+
 /* ------------- Carousel ----------------- */
 h2.carousel_heading {
   width: 100%;

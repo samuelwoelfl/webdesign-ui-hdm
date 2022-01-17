@@ -9,12 +9,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" integrity="sha512-Meww2sXqNHxI1+5Dyh/9KAtvI9RZSA4c1K2k5iL02oiPO/RH3Q30L3M1albtqMg50u4gRTYdV4EXOQqXEI336A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script src="js/cookies.js" charset="utf-8"></script>
   <script src="js/themeSwitch.js" charset="utf-8"></script>
   <script src="js/form.js" charset="utf-8"></script>
   <script src="js/scrollBar.js" charset="utf-8"></script>
   <script src="js/carousel.js"></script>
+
 
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/index.css">
@@ -28,7 +30,7 @@
   <header>
     <div class="inner">
       <div class="left">
-        <img src="img/logo_white." alt="">
+        <img src="img/logo_white.png" alt="">
         <span>Samuel Wölfl</span>
       </div>
       <div class="right">
@@ -121,6 +123,45 @@
   </div>
 
   <div class="wrapper">
+
+    <div class="landingpage">
+      <div id="particles-js"></div>
+      <div class="content">
+        <h2>Hey, ich bin <span id="name">Samuel Wölfl</span>.</h2>
+        <h1><span class="hightlight">UI/UX Designer</span>, <span class="hightlight">Hobby-fotograf</span> & Technik-Enthusiast aus Stuttgart.</h1>
+        <img id="profile_picture" src="img/pb.jpg" alt="">
+      </div>
+    </div>
+    <script type="text/javascript">
+      let name = $("#name");
+      let pb = $("#profile_picture");
+      let posX, posY;
+      let startX, startY;
+      let rotation = 5;
+
+      name.hover(function() {
+        startX = posX;
+        startY = posY;
+        pb.fadeIn(100);
+      }, function() {
+        pb.fadeOut(100);
+      });
+
+      $(document).mousemove(function() {
+        posX = window.event.screenX;
+        posY = window.event.screenY;
+        difX = posX - startX;
+        difY = posY - startY;
+        // if (difX > 0) {
+        //   rotation = -10;
+        // } else {
+        //   rotation = 10;
+        // }
+        // pb.css('transform', `translate(${difX}px, ${difY}px) rotate(${rotation}deg)`);
+        pb.css('transform', `translate(${difX}px, ${difY}px) rotate(${rotation}deg)`);
+      });
+    </script>
+
     <h3>Test input refill with cookies</h3>
     <form action="javascript:sendMail()">
       <label for="prename">First name:</label>
@@ -233,7 +274,7 @@
     </div>
 
   </div>
-
+  <script src="js/particles.js"></script>
 </body>
 
 </html>
