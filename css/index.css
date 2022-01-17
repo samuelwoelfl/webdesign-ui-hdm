@@ -97,6 +97,10 @@ h2.carousel_heading {
   margin-right: 30px;
 }
 
+.carousel-listitem:last-child {
+  margin-right: 0;
+}
+
 .carousel-listitem img {
   height: 40vh;
   border-radius: 4px;
