@@ -5,6 +5,5 @@ $(document).scroll(function(e) {
   var scrollPercent = (scrollAmount / (documentHeight - windowHeight)) * 100;
   var scrollRounded = Math.round(scrollPercent);
 
-  // For scrollbar 1
   $(".scrollBar").css("width", scrollPercent + "%");
 });
