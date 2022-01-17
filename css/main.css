@@ -62,6 +62,10 @@
   transition: background-color .5s ease, color .5s ease;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--bg-dark);
   /* transition: background-color 2s ease; */
@@ -291,6 +295,7 @@ header {
   align-items: center;
   background-color: var(--bg-lighter);
   z-index: 999;
+  border-bottom: 1px solid var(--card-border);
 }
 
 header .inner {
