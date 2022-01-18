@@ -115,7 +115,7 @@ canvas {
 }
 
 .project[onclick*="window"]:hover {
-  cursor: pointer;
+  cursor: none;
 }
 
 .project:hover .image img {
