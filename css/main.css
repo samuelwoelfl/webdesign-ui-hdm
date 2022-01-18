@@ -143,8 +143,8 @@ input.error {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 60vw;
-  left: 20vw;
+  width: var(--content-width);
+  left: calc((100vw - var(--content-width))/2);
   bottom: 2vh;
   padding: 1% 1.5%;
   background-color: var(--bg-lighter);
@@ -316,6 +316,10 @@ header .left {
   align-items: center;
 }
 
+header .left span {
+  font-size: 1.1rem;
+}
+
 header .left img {
   height: 40%;
   margin-right: 5%;
@@ -340,7 +344,7 @@ header .right .desktop-navigation {
 }
 
 header .right .desktop-navigation a {
-  padding-right: 7%;
+  padding-right: 4%;
 }
 
 header .right .desktop-navigation .changer {
