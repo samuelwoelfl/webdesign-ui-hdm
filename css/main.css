@@ -285,7 +285,7 @@ h3 {
   height: 4px;
   width: 0%;
   background: var(--primary);
-  z-index: 99;
+  z-index: 200;
   transition: width 200ms var(--timing);
 }
 
@@ -298,7 +298,7 @@ header {
   justify-content: center;
   align-items: center;
   background-color: var(--bg-lighter);
-  z-index: 999;
+  z-index: 150;
   border-bottom: 1px solid var(--card-border);
 }
 
