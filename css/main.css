@@ -151,8 +151,8 @@ input.error {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: var(--content-width);
-  left: calc((100vw - var(--content-width))/2);
+  width: var(--content-max-width);
+  left: calc((100vw - var(--content-max-width))/2);
   bottom: 2vh;
   padding: 1% 1.5%;
   background-color: var(--bg-lighter);
