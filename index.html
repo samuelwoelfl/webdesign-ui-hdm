@@ -263,6 +263,118 @@
       </div>
     </div>
 
+    <div class="skills-container">
+      <div class="skills">
+        <div class="skill">
+          <p class="skill-title">Web Development</p>
+          <div class="skill-bar" data-bar="90"><span></span></div>
+        </div>
+        <div class="skill">
+          <p class="skill-title">Consulting</p>
+          <div class="skill-bar" data-bar="70"><span></span></div>
+        </div>
+        <div class="skill">
+          <p class="skill-title">Branding & Identity</p>
+          <div class="skill-bar" data-bar="60"><span></span></div>
+        </div>
+        <div class="skill">
+          <p class="skill-title">Graphic Design</p>
+          <div class="skill-bar" data-bar="80"><span></span></div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      let skill = $(".skill");
+      $(document).scroll(function(e) {
+        $.each(skill, function(i, item) {
+          inView = isScrolledIntoView(item);
+          if (inView) {
+            // add class active
+            classes = $(this).attr("class");
+            if (classes.includes("active")) {
+              console.log("schon gesehen");
+            } else {
+              console.log("first time seen")
+              $(this).addClass("active");
+              einblenden($(this));
+            }
+            // get span
+            // $bar = $(this).children(".skill-bar");
+            // level = $bar.attr("data-bar");
+            // console.log(level);
+            // $span = $bar.children("span");
+            // console.log($span);
+            //
+            // $span.animate({
+            //   "width": `${level}%`
+            // }, 1000);
+            //
+            // $span.css("width", `${level}%`)
+            //
+            // $span.append('<b>' + level + '%</b>')
+
+
+
+
+
+            // $span.animate({
+            //   "width": $span.parent().attr("data-bar") + "%"
+            // }, 1000);
+            // $span.append('<b>' + $span.parent().attr("data-bar") + '%</b>');
+            //
+            // setTimeout(function() {
+            //   $span.animate({
+            //     "opacity": "1"
+            //   }, 1000);
+            // }, 2000);
+          } else {
+            $(this).removeClass("active");
+          }
+        });
+      });
+
+      function einblenden(skill) {
+        $skill = $(skill)
+        $bar = $skill.children(".skill-bar");
+        level = $bar.attr("data-bar");
+        console.log(level);
+        $span = $bar.children("span");
+        console.log($span);
+        // $span.html(`${level}%`);
+
+        $span.animate({
+          "width": `${level}%`
+        }, 1000);
+
+        $span.append('<b>' + level + '%</b>');
+        console.log($span.children("b"));
+
+        $span.children("b").animate({
+          "opacity": "1"
+        }, 1000);
+      }
+
+      function isScrolledIntoView(el) {
+        var rect = el.getBoundingClientRect();
+        var elemTop = rect.top;
+        var elemBottom = rect.bottom;
+
+        // Only completely visible elements return true:
+        var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+        // Partially visible elements return true:
+        //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+        return isVisible;
+      }
+
+
+      // $(".skills .skill .skill-bar span").each(function() {
+      //   $(this).animate({
+      //     "width": $(this).parent().attr("data-bar") + "%"
+      //   }, 1000);
+      //   $(this).append('<b>' + $(this).parent().attr("data-bar") + '%</b>');
+      // });
+    </script>
+
     <div class="images">
       <div class="content">
         <h2 class="carousel_heading">Bilder</h2>
