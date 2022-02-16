@@ -393,13 +393,13 @@
           <div class="client"><img src="img/clients/julis.png" alt=""></div>
           <div class="client"><img src="img/clients/openmind.png" alt=""></div>
           <div class="client"><img src="img/clients/ryven.png" alt=""></div>
-          <div class="client"><img src="img/clients/waldsamkeit.png" alt=""></div>
+          <div class="client"><img id="waldsamkeit" src="img/clients/waldsamkeit.png" alt=""></div>
           <div class="client"><img src="img/clients/tableq.png" alt=""></div>
         </div>
       </div>
     </div>
 
-    <div class="contact" id="Kontakt">
+    <div class="contact" id="kontakt">
       <div class="content">
         <h2>Kontakt</h2>
         <form action="javascript:sendMail()">
@@ -419,6 +419,34 @@
         </form>
       </div>
     </div>
+
+    <footer>
+      <div class="content">
+        <div class="column">
+          <h3>Kontakt</h3>
+          <a href="mailto:kontakt@samuelwoelfl.de">kontakt@samuelwoelfl.de</a>
+          <a href="tel:00491717051245">+49 171 7051245</a>
+        </div>
+        <div class="column">
+          <h3>Adresse</h3>
+          <span>Burghaldenweg 64</span>
+          <span>70469 Stuttgart</span>
+        </div>
+        <div class="column">
+          <h3>Rechtliches</h3>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+        <div class="column">
+          <span>© <span id="year"></span> Samuel Wölfl</span>
+        </div>
+        <script type="text/javascript">
+          // always fill the copyright span with the current year
+          let year = new Date().getFullYear();
+          $("#year").html(year)
+        </script>
+      </div>
+    </footer>
 
 
   </div>

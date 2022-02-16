@@ -245,10 +245,15 @@ canvas {
 }
 
 .client img {
-  max-height: 23%;
-  max-width: 47%;
+  max-height: 20%;
+  max-width: 53%;
   filter: brightness(0) invert(1);
-  opacity: .8;
+  opacity: .9;
+}
+
+.client img#waldsamkeit {
+  max-width: 47%;
+  max-height: 33%;
 }
 
 html[data-theme="theme-light"] .client img {
@@ -376,24 +381,23 @@ h2.carousel_heading {
 
 label {
   display: block;
-  font-size: 1.1rem;
   margin: 2% 0 1% 0;
-  opacity: .5;
+  color: var(--text-secondary);
 }
 
 input:not([type=submit]), textarea {
   display: block;
   width: 70%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 1%;
   background-color: var(--bg-lighter);
   border: 1px solid var(--card-border);
-  border-radius: 3px;
+  border-radius: 4px;
   margin-bottom: 2%;
 }
 
 textarea {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 input:focus, textarea:focus {
@@ -427,4 +431,10 @@ input[type=submit] {
   background-color: var(--primary);
   border: none;
   border-radius: 5px;
+  transition: .1s ease;
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+  background-color: var(--primary-light);
 }
