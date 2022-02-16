@@ -29,9 +29,9 @@
   --primary-light: #865ee4;
   --secondary: #e9e81f;
   --card-border: #FFFFFF12;
-  --bg-emphasize: #0C11154D;
+  --bg-emphasize: #1C21254D;
   --bg-dark: #0C1115;
-  --bg-lighter: #1F242A;
+  --bg-lighter: #15171c;
   --text-primary: #FFFFFF;
   --text-secondary: #FFFFFFB3;
   --text-tertiary: #7B8898;
@@ -43,9 +43,9 @@
   --primary-light: #865ee4;
   --secondary: #e5c405;
   --card-border: #00000012;
-  --bg-emphasize: #E6DDD44D;
+  --bg-emphasize: #E2E2E64D;
   --bg-dark: #ffffff;
-  --bg-lighter: #f5f5f5;
+  --bg-lighter: #fafbfe;
   --text-primary: #161616;
   --text-secondary: #161616B3;
   --text-tertiary: #6e6e6e;
@@ -59,6 +59,7 @@
   font-family: var(--fontFamily);
   color: var(--text-primary);
   transition: background-color .5s ease, color .5s ease;
+  scroll-behavior: smooth;
 }
 
 ::selection {
@@ -87,7 +88,15 @@ a:hover {
 }
 
 h2 {
-  padding: 2% 0 5% 0;
+  font-size: 1.8rem;
+  margin-bottom: 7%;
+}
+
+h2:not(.landingpage h2) {
+  color: transparent;
+  font-size: 2.7rem;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--primary);
 }
 
 button {
@@ -122,26 +131,6 @@ button.secondary:hover {
 
 button:active {
   transform: scale(0.95);
-}
-
-input:focus {
-  outline: none;
-  border-color: var(--primary);
-}
-
-input.error {
-  border-color: var(--secondary);
-}
-
-.error_message:before {
-  content: "⚠️";
-  margin-right: 3px;
-  font-size: 1rem;
-}
-
-.error_message {
-  color: var(--secondary);
-  font-size: 0.9rem;
 }
 
 .start_banner {
@@ -226,21 +215,6 @@ input.error {
   justify-content: center;
   align-items: center;
   pointer-events: none;
-}
-
-label {
-  display: block;
-  margin: 1.4% 0 .5% 0;
-}
-
-input {
-  display: block;
-  font-size: 1em;
-  padding: .7% .5%;
-  margin: .2% 0 0% 0;
-  background-color: var(--bg-lighter);
-  border: 1px solid var(--card-border);
-  border-radius: 3px;
 }
 
 h3 {

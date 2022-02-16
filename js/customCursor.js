@@ -4,8 +4,6 @@ $(document).ready(function() {
   let projects = $(".project[onclick*='window']");
   let posX, posY;
 
-  console.log(projects);
-
   projects.hover(function() {
     externalLinkCursor.fadeIn(0);
   }, function() {

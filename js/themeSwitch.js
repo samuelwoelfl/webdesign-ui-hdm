@@ -130,7 +130,6 @@ $(document).ready(function() {
 
   // ------------- Particle.js ------------------
   color = getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trimStart();
-  console.log(color);
   var count_particles, stats, update;
 
   update = function() {

@@ -137,269 +137,87 @@
 
   <div class="wrapper">
 
-    <div class="landingpage">
-      <div id="particles-js"></div>
+    <div class="images">
       <div class="content">
-        <h2>Hey, ich bin <span id="name">Samuel Wölfl</span>.</h2>
-        <h1><span class="hightlight">UI/UX Designer</span>, <span class="hightlight">Hobby-fotograf</span> & Technik-Enthusiast aus Stuttgart.</h1>
-        <img id="profile_picture" src="img/pb.jpg" alt="">
-      </div>
-    </div>
-    <script type="text/javascript">
-      let name = $("#name");
-      let pb = $("#profile_picture");
-      let posX, posY;
-      let startX, startY;
-      let rotation = 5;
+        <h2 class="carousel_heading">Bilder</h2>
+        <div class="carousel">
+          <div class="carousel-recs carousel-container">
 
-      name.hover(function() {
-        startX = posX;
-        startY = posY;
-        pb.fadeIn(100);
-      }, function() {
-        pb.fadeOut(100);
-      });
+            <div class="carousel-header">
+              <span class="carousel-button carousel-prev-rec active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18.82" height="19.648" viewBox="0 0 18.82 19.648">
+                  <g id="Icon_feather-arrow-left" data-name="Icon feather-arrow-left" transform="translate(-6.5 -6.086)">
+                    <path id="Pfad_245" data-name="Pfad 245" d="M24.32,18H7.5" transform="translate(0 -2.09)" fill="none" stroke="var(--text-primary)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    <path id="Pfad_246" data-name="Pfad 246" d="M15.91,24.32,7.5,15.91,15.91,7.5" fill="none" stroke="var(--text-primary)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                  </g>
+                </svg>
+              </span>
+            </div>
 
-      $(document).mousemove(function() {
-        posX = window.event.screenX;
-        posY = window.event.screenY;
-        difX = posX - startX;
-        difY = posY - startY;
-        pb.css('transform', `translate(${difX}px, ${difY}px) rotate(${rotation}deg)`);
-      });
-    </script>
+            <div class="carousel-body">
+              <div class="carousel-list">
 
-    <div class="projects" id="projekte">
-      <div class="content">
-        <h2>Projekte</h2>
-        <div class="projects-list">
+                <div class="carousel-listitem card">
+                  <img src="img/gallery/lena/IMGP4452_edit.jpg" alt="">
+                </div>
 
-          <div class="project" onclick="window.open('https://tableq.de/')">
-            <div class="container">
-              <div class="image">
-                <img src="img/projects/tableq.jpg" alt="">
-              </div>
-              <div class="info">
-                <h3 class="name">TableQ</h3>
-                <p class="work">Webdesign & Umsetzung</p>
+                <div class="carousel-listitem card">
+                  <img src="img/gallery/lena/IMGP4456_edit.jpg" alt="">
+                </div>
+
+                <div class="carousel-listitem card">
+                  <img src="img/gallery/lena/IMGP4472_edit.jpg" alt="">
+                </div>
+
+                <div class="carousel-listitem card">
+                  <img src="img/gallery/lena/IMGP4504_edit.jpg" alt="">
+                </div>
+
+                <div class="carousel-listitem card">
+                  <img src="img/gallery/lena/IMGP4538_edit.jpg" alt="">
+                </div>
+
+                <div class="carousel-listitem card">
+                  <img src="img/gallery/lena/IMGP4595_edit.jpg" alt="">
+                </div>
+
+                <div class="carousel-listitem card">
+                  <img src="img/gallery/caro/IMGP4448_edit-2.jpg" alt="">
+                </div>
+
+                <div class="carousel-listitem card">
+                  <img src="img/gallery/caro/IMGP4479_edit.jpg" alt="">
+                </div>
+
+                <div class="carousel-listitem card">
+                  <img src="img/gallery/caro/IMGP4508_edit.jpg" alt="">
+                </div>
+
+                <div class="carousel-listitem card">
+                  <img src="img/gallery/caro/IMGP4547_edit.jpg" alt="">
+                </div>
+
               </div>
             </div>
-            <p class="branche">Gastronomie</p>
-            <p class="date">2021</p>
+
+            <div class="carousel-header">
+              <span class="carousel-button carousel-next-rec active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18.82" height="19.648" viewBox="0 0 18.82 19.648">
+                  <g id="Icon_feather-arrow-right" data-name="Icon feather-arrow-right" transform="translate(-6.5 -6.086)">
+                    <path id="Pfad_245" data-name="Pfad 245" d="M24.32,18H7.5" transform="translate(0 -2.09)" fill="none" stroke="var(--text-primary)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    <path id="Pfad_246" data-name="Pfad 246" d="M15.91,24.32,7.5,15.91,15.91,7.5" fill="none" stroke="var(--text-primary)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                  </g>
+                </svg>
+              </span>
+            </div>
+
           </div>
-
-          <!-- <div class="project" onclick="window.open('https://ryven.org/')">
-            <div class="container">
-              <div class="image">
-                <img src="img/projects/ryven.png" alt="">
-              </div>
-              <div class="info">
-                <h3 class="name">Ryven</h3>
-                <p class="work">Webdesign & -development</p>
-              </div>
-            </div>
-            <p class="branche">Technologie</p>
-            <p class="date">2021</p>
-          </div> -->
-
-          <div class="project" onclick="window.open('https://danica-sattink-rath.de/')">
-            <div class="container">
-              <div class="image">
-                <img src="img/projects/danica.png" alt="">
-              </div>
-              <div class="info">
-                <h3 class="name">Danica Sattink Rath</h3>
-                <p class="work">Webdesign & Umsetzung</p>
-              </div>
-            </div>
-            <p class="branche">Personal</p>
-            <p class="date">2021</p>
-          </div>
-
-          <div class="project" onclick="window.open('https://chrome.google.com/webstore/detail/moodle-extension/pfkngbklagngidpjhfdohdbcklpioldi')">
-            <div class="container">
-              <div class="image">
-                <img src="img/projects/moodle.png" alt="">
-              </div>
-              <div class="info">
-                <h3 class="name">Moodle Chrome Extension</h3>
-                <p class="work">Design & Development</p>
-              </div>
-            </div>
-            <p class="branche">Bildung</p>
-            <p class="date">2021</p>
-          </div>
-
-          <div class="project">
-            <div class="container">
-              <div class="image">
-                <img src="img/projects/smart_home.svg" alt="">
-              </div>
-              <div class="info">
-                <h3 class="name">Smart Home App</h3>
-                <p class="work">UI/UX Design</p>
-              </div>
-            </div>
-            <p class="branche">Technologie</p>
-            <p class="date">2020</p>
-          </div>
-
-          <div class="project" onclick="window.open('http://abi.samuelwoelfl.de/')">
-            <div class="container">
-              <div class="image">
-                <img src="img/projects/education_app.svg" alt="">
-              </div>
-              <div class="info">
-                <h3 class="name">Education Web-App</h3>
-                <p class="work">UI/UX-Design & Development</p>
-              </div>
-            </div>
-            <p class="branche">Bildung</p>
-            <p class="date">2020</p>
-          </div>
-
         </div>
       </div>
     </div>
 
-    <!-- <div class="skills-container">
-      <div class="skills">
-        <div class="skill">
-          <p class="skill-title">Web Development</p>
-          <div class="skill-bar" data-bar="90"><span></span></div>
-        </div>
-        <div class="skill">
-          <p class="skill-title">Consulting</p>
-          <div class="skill-bar" data-bar="70"><span></span></div>
-        </div>
-        <div class="skill">
-          <p class="skill-title">Branding & Identity</p>
-          <div class="skill-bar" data-bar="60"><span></span></div>
-        </div>
-        <div class="skill">
-          <p class="skill-title">Graphic Design</p>
-          <div class="skill-bar" data-bar="80"><span></span></div>
-        </div>
-      </div>
-    </div> -->
-    <script type="text/javascript">
-      let skill = $(".skill");
-      $(document).scroll(function(e) {
-        $.each(skill, function(i, item) {
-          inView = isScrolledIntoView(item);
-          if (inView) {
-            // add class active
-            classes = $(this).attr("class");
-            if (classes.includes("active")) {
-              console.log("schon gesehen");
-            } else {
-              console.log("first time seen")
-              $(this).addClass("active");
-              einblenden($(this));
-            }
-            // get span
-            // $bar = $(this).children(".skill-bar");
-            // level = $bar.attr("data-bar");
-            // console.log(level);
-            // $span = $bar.children("span");
-            // console.log($span);
-            //
-            // $span.animate({
-            //   "width": `${level}%`
-            // }, 1000);
-            //
-            // $span.css("width", `${level}%`)
-            //
-            // $span.append('<b>' + level + '%</b>')
 
-
-
-
-
-            // $span.animate({
-            //   "width": $span.parent().attr("data-bar") + "%"
-            // }, 1000);
-            // $span.append('<b>' + $span.parent().attr("data-bar") + '%</b>');
-            //
-            // setTimeout(function() {
-            //   $span.animate({
-            //     "opacity": "1"
-            //   }, 1000);
-            // }, 2000);
-          } else {
-            $(this).removeClass("active");
-          }
-        });
-      });
-
-      function einblenden(skill) {
-        $skill = $(skill)
-        $bar = $skill.children(".skill-bar");
-        level = $bar.attr("data-bar");
-        console.log(level);
-        $span = $bar.children("span");
-        console.log($span);
-        // $span.html(`${level}%`);
-
-        $span.animate({
-          "width": `${level}%`
-        }, 1000);
-
-        $span.append('<b>' + level + '%</b>');
-        console.log($span.children("b"));
-
-        $span.children("b").animate({
-          "opacity": "1"
-        }, 1000);
-      }
-
-      function isScrolledIntoView(el) {
-        var rect = el.getBoundingClientRect();
-        var elemTop = rect.top;
-        var elemBottom = rect.bottom;
-
-        // Only completely visible elements return true:
-        var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
-        // Partially visible elements return true:
-        //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
-        return isVisible;
-      }
-
-
-      // $(".skills .skill .skill-bar span").each(function() {
-      //   $(this).animate({
-      //     "width": $(this).parent().attr("data-bar") + "%"
-      //   }, 1000);
-      //   $(this).append('<b>' + $(this).parent().attr("data-bar") + '%</b>');
-      // });
-    </script>
-
-    <div class="about">
-      <div class="content">
-        <h2>Über mich</h2>
-        <p>Meine Vision ist es, durch nutzerfreundliche Designs zu einer besseren Welt beizutragen. Deshalb möchte ich dabei helfen, ansprechende Lösungen zu schaffen, die das Leben vieler Menschen bereichern werden. <br>
-          Ich bin offen für Aufträge und freue mich, die Welt gemeinsam mit dir ein Stück besser zu machen!</p>
-      </div>
-    </div>
-
-    <div class="clients">
-      <div class="content">
-        <h2>Kunden & Partner</h2>
-        <div class="clients-list">
-          <div class="client"><img src="img/clients/app-innovators.png" alt=""></div>
-          <div class="client"><img src="img/clients/di-on.png" alt=""></div>
-          <div class="client"><img src="img/clients/dango.svg" alt=""></div>
-          <div class="client"><img src="img/clients/gumb.png" alt=""></div>
-          <div class="client"><img src="img/clients/julis.png" alt=""></div>
-          <div class="client"><img src="img/clients/openmind.png" alt=""></div>
-          <div class="client"><img src="img/clients/ryven.png" alt=""></div>
-          <div class="client"><img src="img/clients/waldsamkeit.png" alt=""></div>
-          <div class="client"><img src="img/clients/tableq.png" alt=""></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="contact" id="Kontakt">
+    <div class="contact">
       <div class="content">
         <h2>Kontakt</h2>
         <form action="javascript:sendMail()">
@@ -415,10 +233,31 @@
           <label for="message">Nachricht:</label>
           <textarea name="message" id="message" rows="8" cols="80"></textarea>
 
-          <input type="submit" value="Abschicken">
+          <input type="submit" value="Submit">
         </form>
       </div>
     </div>
+
+
+    <h3>Project Ideas</h3>
+    <ul>
+      <li>Moodle Browser Extension</li>
+      <li>Game?</li>
+      <li>QR Code Generator</li>
+      <li>Ryven.org</li>
+      <li>Education App</li>
+      <li>monay</li>
+      <li>Danica Website</li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
 
 
   </div>

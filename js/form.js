@@ -15,7 +15,7 @@ $(document).ready(function() {
 
   // populate the inputs variable since nearly everything is using it here
   // the selector selects all inputs in the html but only "real" inputs by avoiding the submit button
-  $inputs = $("input:not([type=submit])");
+  $inputs = $("input:not([type=submit]), textarea");
 
   // run the fillInputs function with all inputs to populate them with the available values from cookies
   fillInputs($inputs);
@@ -53,13 +53,24 @@ $(document).ready(function() {
     }
   });
 
-  // TODO: fix this
-  window.onbeforeunload = function() {
-    if (isDirty) {
-      return 'There is unsaved data.';
+  // check when site gets closed
+  window.addEventListener("beforeunload", function(e) {
+    // test if there are values in any input
+    var values = [];
+    $.each($inputs, function(i, item) {
+      value = $(this).val();
+      if (value == "") {
+        values.push(false);
+      } else {
+        values.push(true);
+      }
+    });
+    // if cookies were declined and there is a value in some input stop the site from bein closed directly
+    if (Cookies.get("cookiesAccepted") == undefined && values.includes(true)) {
+      (e || window.event).returnValue = "attention"; // Internet Explorer
+      return "attention"; // Any other browser
     }
-    return undefined;
-  }
+  });
 
 });
 
@@ -84,6 +95,8 @@ function validateInput(input, focus, highlight) {
   }
   // convert the provided input html element to a jquery opject to enable jquery functions for it
   input = $(input);
+  // get tag of input and see if it's an input or textarea
+  let tag = input.prop("tagName").toLowerCase();
   // get value of input
   let value = input.val();
   // get id of input
@@ -164,7 +177,7 @@ function validateInput(input, focus, highlight) {
     } else {
       // create the error message with a formatted string and put it in the DOM right after the corresponding input by using the vanilla js function insertAdjacentHTML (also tried jquery functions but they didn't completely work).
       // used document.querySelector here to directly get the html object and not the jquery object since we need to use a vanilla js function
-      document.querySelector(`input#${id}`).insertAdjacentHTML("afterend",
+      document.querySelector(`${tag}#${id}`).insertAdjacentHTML("afterend",
         `<p class="${errorMessageClass}">${message}</p>`);
     }
     // add the class to the input element so the styling can be adjusted in CSS
