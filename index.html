@@ -174,7 +174,7 @@
         <h2>Projekte</h2>
         <div class="projects-list">
 
-          <div class="project" onclick="window.open('https://tableq.de/')">
+          <div class="project fade" onclick="window.open('https://tableq.de/')">
             <div class="container">
               <div class="image">
                 <img src="img/projects/tableq.jpg" alt="">
@@ -202,7 +202,7 @@
             <p class="date">2021</p>
           </div> -->
 
-          <div class="project" onclick="window.open('https://danica-sattink-rath.de/')">
+          <div class="project fade" onclick="window.open('https://danica-sattink-rath.de/')">
             <div class="container">
               <div class="image">
                 <img src="img/projects/danica.png" alt="">
@@ -216,7 +216,7 @@
             <p class="date">2021</p>
           </div>
 
-          <div class="project" onclick="window.open('https://chrome.google.com/webstore/detail/moodle-extension/pfkngbklagngidpjhfdohdbcklpioldi')">
+          <div class="project fade" onclick="window.open('https://chrome.google.com/webstore/detail/moodle-extension/pfkngbklagngidpjhfdohdbcklpioldi')">
             <div class="container">
               <div class="image">
                 <img src="img/projects/moodle.png" alt="">
@@ -230,7 +230,7 @@
             <p class="date">2021</p>
           </div>
 
-          <div class="project">
+          <div class="project fade">
             <div class="container">
               <div class="image">
                 <img src="img/projects/smart_home.svg" alt="">
@@ -244,7 +244,7 @@
             <p class="date">2020</p>
           </div>
 
-          <div class="project" onclick="window.open('http://abi.samuelwoelfl.de/')">
+          <div class="project fade" onclick="window.open('http://abi.samuelwoelfl.de/')">
             <div class="container">
               <div class="image">
                 <img src="img/projects/education_app.svg" alt="">
@@ -377,7 +377,7 @@
     <div class="about">
       <div class="content">
         <h2>Über mich</h2>
-        <p>Meine Vision ist es, durch nutzerfreundliche Designs zu einer besseren Welt beizutragen. Deshalb möchte ich dabei helfen, ansprechende Lösungen zu schaffen, die das Leben vieler Menschen bereichern werden. <br>
+        <p class="fade">Meine Vision ist es, durch nutzerfreundliche Designs zu einer besseren Welt beizutragen. Deshalb möchte ich dabei helfen, ansprechende Lösungen zu schaffen, die das Leben vieler Menschen bereichern werden. <br>
           Ich bin offen für Aufträge und freue mich, die Welt gemeinsam mit dir ein Stück besser zu machen!</p>
       </div>
     </div>
@@ -386,15 +386,15 @@
       <div class="content">
         <h2>Kunden & Partner</h2>
         <div class="clients-list">
-          <div class="client"><img src="img/clients/app-innovators.png" alt=""></div>
-          <div class="client"><img src="img/clients/di-on.png" alt=""></div>
-          <div class="client"><img src="img/clients/dango.svg" alt=""></div>
-          <div class="client"><img src="img/clients/gumb.png" alt=""></div>
-          <div class="client"><img src="img/clients/julis.png" alt=""></div>
-          <div class="client"><img src="img/clients/openmind.png" alt=""></div>
-          <div class="client"><img src="img/clients/ryven.png" alt=""></div>
-          <div class="client"><img id="waldsamkeit" src="img/clients/waldsamkeit.png" alt=""></div>
-          <div class="client"><img src="img/clients/tableq.png" alt=""></div>
+          <div class="client fade"><img src="img/clients/app-innovators.png" alt=""></div>
+          <div class="client fade"><img src="img/clients/di-on.png" alt=""></div>
+          <div class="client fade"><img src="img/clients/dango.svg" alt=""></div>
+          <div class="client fade"><img src="img/clients/gumb.png" alt=""></div>
+          <div class="client fade"><img src="img/clients/julis.png" alt=""></div>
+          <div class="client fade"><img src="img/clients/openmind.png" alt=""></div>
+          <div class="client fade"><img src="img/clients/ryven.png" alt=""></div>
+          <div class="client fade"><img id="waldsamkeit" src="img/clients/waldsamkeit.png" alt=""></div>
+          <div class="client fade"><img src="img/clients/tableq.png" alt=""></div>
         </div>
       </div>
     </div>
@@ -450,6 +450,15 @@
 
 
   </div>
+  <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+  <script type="text/javascript">
+    // initialize the ScrollOut library
+    ScrollOut({
+      targets: '.fade',
+      once: true,
+      threshold: 0.4,
+    })
+  </script>
   <script src="js/themeSwitch.js" charset="utf-8"></script>
 </body>
 
