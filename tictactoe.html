@@ -12,37 +12,27 @@
   </script>
 
   <script src="js/cookies.js" charset="utf-8"></script>
-  <script src="js/form.js" charset="utf-8"></script>
-  <script src="js/carousel.js"></script>
+  <script src="js/tictactoe.js" charset="utf-8"></script>
 
 
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/galerie.css">
+  <link rel="stylesheet" href="css/tictactoe.css">
   <title>Samuel Wölfl</title>
 </head>
 
 <body>
 
-  <!-- <div class="scrollBar"></div> -->
-  <span class="custom-cursor" id="external-link" style="display:none">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right">
-      <line x1="7" y1="17" x2="17" y2="7"></line>
-      <polyline points="7 7 17 7 17 17"></polyline>
-    </svg>
-  </span>
-
-
   <header>
     <div class="inner">
-      <a class="left" href="index.html">
+      <div class="left">
         <img src="img/logo_white.png" alt="">
         <span>Samuel Wölfl</span>
-      </a>
+      </div>
       <div class="right">
         <nav class="desktop-navigation">
-          <a href="">Galerie</a>
-          <a href="index.html#projekte">Projekte</a>
-          <a href="index.html#kontakt">Kontakt</a>
+          <a href="galerie.html">Galerie</a>
+          <a href="#projekte">Projekte</a>
+          <a href="#kontakt">Kontakt</a>
           <div class="changer">
             <svg class="sun" id="sun_icon" xmlns="http://www.w3.org/2000/svg" width="23.294" height="23.294" viewBox="0 0 23.294 23.294">
               <g id="Icon_feather-sun" data-name="Icon feather-sun" transform="translate(0.75 0.75)">
@@ -129,138 +119,29 @@
   </div>
 
   <div class="wrapper">
+    <div class="content">
+      <h2>TicTacToe</h2>
+      <p class="spielstand">
+        <span class="player" id="playerX">Spieler X</span>
+        <span class="count" id="countX">0</span>
+        <span> : </span>
+        <span class="count" id="countO">0</span>
+        <span class="player" id="playerO">Spieler O</span>
+      </p>
 
-    <div class="images">
-      <div class="content">
-        <h2 class="carousel_heading">Bilder</h2>
-        <div class="carousel">
-          <div class="carousel-recs carousel-container">
-
-            <div class="carousel-header">
-              <span class="carousel-button carousel-prev-rec active">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18.82" height="19.648" viewBox="0 0 18.82 19.648">
-                  <g id="Icon_feather-arrow-left" data-name="Icon feather-arrow-left" transform="translate(-6.5 -6.086)">
-                    <path id="Pfad_245" data-name="Pfad 245" d="M24.32,18H7.5" transform="translate(0 -2.09)" fill="none" stroke="var(--text-primary)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-                    <path id="Pfad_246" data-name="Pfad 246" d="M15.91,24.32,7.5,15.91,15.91,7.5" fill="none" stroke="var(--text-primary)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-                  </g>
-                </svg>
-              </span>
-            </div>
-
-            <div class="carousel-body">
-              <div class="carousel-list">
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/nature/kueste-doerdel-dor-1.jpg" alt="">
-                </div>
-
-
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/nature/weg_klippen.jpg" alt="">
-                </div>
-
-                <!-- <div class="carousel-listitem card">
-                  <img src="img/gallery/nature/moewe_samuel-1.jpg" alt="">
-                </div> -->
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/nature/boscastle_kueste-1.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/nature/amden_berg.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/danmark/IMGP3107-edit.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/danmark/IMGP3123-edit.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/basel/basel1.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/nature/IMGP1463_full.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/basel/basel4.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/basel/basel3.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/basel/basel5.jpg" alt="">
-                </div>
-
-
-
-                <!-- <div class="carousel-listitem card">
-                  <img src="img/gallery/lena/IMGP4452_edit.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/lena/IMGP4456_edit.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/lena/IMGP4472_edit.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/lena/IMGP4504_edit.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/lena/IMGP4538_edit.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/lena/IMGP4595_edit.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/caro/IMGP4448_edit-2.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/caro/IMGP4479_edit.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/caro/IMGP4508_edit.jpg" alt="">
-                </div>
-
-                <div class="carousel-listitem card">
-                  <img src="img/gallery/caro/IMGP4547_edit.jpg" alt="">
-                </div> -->
-
-              </div>
-            </div>
-
-            <div class="carousel-header">
-              <span class="carousel-button carousel-next-rec active">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18.82" height="19.648" viewBox="0 0 18.82 19.648">
-                  <g id="Icon_feather-arrow-right" data-name="Icon feather-arrow-right" transform="translate(-6.5 -6.086)">
-                    <path id="Pfad_245" data-name="Pfad 245" d="M24.32,18H7.5" transform="translate(0 -2.09)" fill="none" stroke="var(--text-primary)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-                    <path id="Pfad_246" data-name="Pfad 246" d="M15.91,24.32,7.5,15.91,15.91,7.5" fill="none" stroke="var(--text-primary)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-                  </g>
-                </svg>
-              </span>
-            </div>
-
-          </div>
-        </div>
+      <p id="win_state"><span id="current_player">X</span> ist am Zug</p>
+      <div class="game">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
       </div>
     </div>
-
   </div>
 
 
@@ -293,6 +174,15 @@
   </footer>
 
 
+  <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+  <script type="text/javascript">
+    // initialize the ScrollOut library
+    ScrollOut({
+      targets: '.fade',
+      once: true,
+      threshold: 0.4,
+    })
+  </script>
   <script src="js/themeSwitch.js" charset="utf-8"></script>
 </body>
 

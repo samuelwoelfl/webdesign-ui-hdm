@@ -1,0 +1,63 @@
+h2 {
+  margin: 8vh auto 4vh auto;
+  text-align: center;
+}
+
+.game {
+  margin: 7vh auto 15vh auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 30vw;
+  width: 30vw;
+  border-radius: 7px;
+  background-color: var(--bg-lighter);
+  padding: 2%;
+}
+
+.box {
+  width: 31%;
+  height: 31%;
+  background-color: var(--bg-emphasize);
+  border: 1px solid var(--card-border);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.box.win {
+  background-color: var(--primary);
+}
+
+.box.filled {}
+
+.box:not(.filled):hover {
+  background-color: var(--card-border);
+  cursor: pointer;
+}
+
+.spielstand {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.spielstand .player {
+  color: var(--text-tertiary);
+}
+
+.spielstand .count {
+  font-size: 1rem;
+}
+
+#win_state {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 1vh;
+  font-size: 1.5rem;
+}

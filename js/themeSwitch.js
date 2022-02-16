@@ -134,7 +134,7 @@ $(document).ready(function() {
 
   // don't run particle js on galerie page
 
-  if (!currentURL.includes('galerie')) {
+  if (!currentURL.includes('galerie') && !currentURL.includes('tictactoe')) {
     color = getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trimStart();
     var count_particles, stats, update;
 
@@ -170,7 +170,7 @@ $(document).ready(function() {
       Cookies.set('theme', `${theme}`);
     }
     color = getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trimStart();
-    if (!currentURL.includes('galerie')) {
+    if (!currentURL.includes('galerie') && !currentURL.includes('tictactoe')) {
       info["particles"]["color"]["value"] = `${color}`;
       info["particles"]["line_linked"]["color"] = `${color}`;
       particlesJS("particles-js", info);
