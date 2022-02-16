@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  let currentURL = location.href;
+
   // Elemente aus HTML bekommen
   let $sun = $("#sun_icon");
   let $moon = $("#moon_icon");
@@ -129,15 +131,20 @@ $(document).ready(function() {
 
 
   // ------------- Particle.js ------------------
-  color = getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trimStart();
-  var count_particles, stats, update;
 
-  update = function() {
+  // don't run particle js on galerie page
+
+  if (!currentURL.includes('galerie')) {
+    color = getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trimStart();
+    var count_particles, stats, update;
+
+    update = function() {
+      requestAnimationFrame(update);
+    };
     requestAnimationFrame(update);
-  };
-  requestAnimationFrame(update);
+    particlesJS("particles-js", info);
+  }
 
-  particlesJS("particles-js", info);
   // ------------ Particle.js End ----------------
 
 
@@ -163,9 +170,12 @@ $(document).ready(function() {
       Cookies.set('theme', `${theme}`);
     }
     color = getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trimStart();
-    info["particles"]["color"]["value"] = `${color}`;
-    info["particles"]["line_linked"]["color"] = `${color}`;
-    particlesJS("particles-js", info);
+    if (!currentURL.includes('galerie')) {
+      info["particles"]["color"]["value"] = `${color}`;
+      info["particles"]["line_linked"]["color"] = `${color}`;
+      particlesJS("particles-js", info);
+    }
+
   }
 
 });

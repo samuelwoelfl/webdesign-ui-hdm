@@ -2,7 +2,7 @@
 let speed = 1.5;
 // set if you want autoscroll and if so how many seconds should be between each scroll
 let autoScroll = false;
-let autoScrollSeconds = 4;
+let autoScrollSeconds = 5;
 
 // other variables for global scope
 let recTranslate = 0;
