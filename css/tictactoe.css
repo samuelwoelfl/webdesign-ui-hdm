@@ -32,6 +32,7 @@ h2 {
 
 .box.win {
   background-color: var(--primary);
+  color: #fff;
 }
 
 .box.filled {}
@@ -60,4 +61,11 @@ h2 {
   text-align: center;
   margin-top: 1vh;
   font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 450px) {
+  .game {
+    height: 80vw;
+    width: 80vw;
+  }
 }

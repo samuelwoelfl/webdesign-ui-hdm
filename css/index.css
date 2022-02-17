@@ -267,7 +267,7 @@ html[data-theme="theme-light"] .client img {
 }
 
 .contact {
-  padding: 8%;
+  padding: 8% 0;
 }
 
 label {
@@ -328,4 +328,128 @@ input[type=submit] {
 input[type=submit]:hover {
   cursor: pointer;
   background-color: var(--primary-light);
+}
+
+@media only screen and (max-width: 450px) {
+  .landingpage .content h2 {
+    font-size: 1.5rem;
+  }
+
+  .landingpage .content h1 {
+    font-size: 2.5rem;
+    width: 100%;
+  }
+
+  #profile_picture {
+    width: 75vw;
+    right: 10vw;
+    top: 5vh;
+  }
+
+  .projects {
+    padding: 20% 0;
+  }
+
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .project-list a {
+    display: block;
+    width: 100%;
+  }
+
+  .projects-list .project {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10% 0;
+  }
+
+  .projects-list .project .container {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .projects-list .project .container .image {
+    width: 90%;
+    margin-right: 0;
+  }
+
+  .projects-list .info {
+    width: 100%;
+  }
+
+  .projects-list h3 {
+    font-size: 1.3rem;
+    margin: 5% 0 2% 0;
+  }
+
+  .projects-list p {
+    font-size: 1.1rem;
+  }
+
+  .projects-list .branche, .projects-list .date {
+    display: none;
+  }
+
+  .about {
+    padding: 30% 0;
+  }
+
+  .about p {
+    font-size: 1.6rem;
+    width: 100%;
+    letter-spacing: -0.5px;
+    line-height: 150%;
+    font-weight: 400;
+  }
+
+  .clients {
+    padding: 30% 0;
+  }
+
+  .clients h2 {
+    margin-bottom: 12%;
+  }
+
+  .clients-list .client {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 2%;
+  }
+
+  .contact {
+    padding: 25% 0;
+  }
+
+  .contact h2 {
+    margin-bottom: 12%;
+  }
+
+  label {
+    font-size: 1.1rem;
+    margin-top: 5%;
+  }
+
+  input:not([type=submit]), textarea {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 3%;
+  }
+
+  textarea {
+    font-size: 1.1rem;
+  }
+
+  input[type=submit] {
+    font-size: 1.2rem;
+    padding: 4% 15%;
+    margin-top: 10%;
+  }
 }

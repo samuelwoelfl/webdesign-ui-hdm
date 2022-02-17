@@ -1,5 +1,5 @@
 .images {
-  padding: 7%;
+  padding: 7% 0;
 }
 
 /* ------------- Carousel ----------------- */
@@ -111,3 +111,30 @@ h2.carousel_heading {
 }
 
 /* ------------- Carousel End ----------------- */
+@media only screen and (max-width: 450px) {
+  .images {
+    padding: 20% 0;
+  }
+
+  .carousel-button {
+    width: 40px;
+    height: 40px;
+    padding: 14px;
+  }
+
+  .carousel-prev-rec {
+    display: none;
+  }
+
+  .carousel-next-rec {
+    display: none;
+  }
+
+  .carousel-listitem {
+    margin-right: 15px;
+  }
+
+  .carousel-listitem img {
+    height: 53vh;
+  }
+}
