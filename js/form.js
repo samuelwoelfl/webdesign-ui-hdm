@@ -2,10 +2,10 @@
 let $inputs;
 
 // Some variables so that you can change them easily
-let mailId = "mail";
-let errorMessageClass = "error_message";
-let errorMessageEmpty = "Dieses Feld muss ausgefüllt werden";
-let errorMessageInvalidMail = "Dies ist keine valide Mail";
+let mailId = 'mail';
+let errorMessageClass = 'error_message';
+let errorMessageEmpty = 'Dieses Feld muss ausgefüllt werden';
+let errorMessageInvalidMail = 'Dies ist keine valide Mail';
 
 // initialize her so the counting is set
 let mailBlurValidations = 0;
@@ -15,13 +15,13 @@ $(document).ready(function() {
 
   // populate the inputs variable since nearly everything is using it here
   // the selector selects all inputs in the html but only "real" inputs by avoiding the submit button
-  $inputs = $("input:not([type=submit]), textarea");
+  $inputs = $('input:not([type=submit]), textarea');
 
   // run the fillInputs function with all inputs to populate them with the available values from cookies
   fillInputs($inputs);
 
   // add an event listener to safe an input value to a cookie when the input value changes
-  $inputs.on("input", function() {
+  $inputs.on('input', function() {
     // get name attribute of input
     let name = $(this).attr('name');
     // get value of input
@@ -32,7 +32,7 @@ $(document).ready(function() {
       Cookies.set(name + '-inputCookie', value);
     }
     // check if it is the mail input since it requires more time to insert a valid mail
-    if ($(this).attr("id") == mailId) {
+    if ($(this).attr('id') == mailId) {
       // if this field hasn't been leaved ("blurred") before or in other words it's the first time the user uses it, it should not directly fire the validation on every change since the first characters will never be valid even if the user will insert a valid mail
       // it will start to validate on change if the users selects it for the second time or more to for example correct his error => then this is helpful, because he will directly see if his changes made the email valid and not only when he leaves the field
       if (mailBlurValidations != 0) {
@@ -45,30 +45,30 @@ $(document).ready(function() {
   });
 
   // Also add the validation on blur so the user sees if he made an error directly after leaving the field even if he didn't make any changes => extra important for the first time the user puts in his mail because the onchange validation is deactivatet there
-  $inputs.on("blur", function() {
+  $inputs.on('blur', function() {
     validateInput(this);
     // count up the mail blur validations so it knows that it can now use the onchange validation
-    if ($(this).attr("id") == mailId) {
+    if ($(this).attr('id') == mailId) {
       mailBlurValidations += 1;
     }
   });
 
   // check when site gets closed
-  window.addEventListener("beforeunload", function(e) {
+  window.addEventListener('beforeunload', function(e) {
     // test if there are values in any input
     var values = [];
     $.each($inputs, function(i, item) {
       value = $(this).val();
-      if (value == "") {
+      if (value == '') {
         values.push(false);
       } else {
         values.push(true);
       }
     });
     // if cookies were declined and there is a value in some input stop the site from bein closed directly
-    if (Cookies.get("cookiesAccepted") == undefined && values.includes(true)) {
-      (e || window.event).returnValue = "attention"; // Internet Explorer
-      return "attention"; // Any other browser
+    if (Cookies.get('cookiesAccepted') == undefined && values.includes(true)) {
+      (e || window.event).returnValue = 'attention'; // Internet Explorer
+      return 'attention'; // Any other browser
     }
   });
 
@@ -96,15 +96,15 @@ function validateInput(input, focus, highlight) {
   // convert the provided input html element to a jquery opject to enable jquery functions for it
   input = $(input);
   // get tag of input and see if it's an input or textarea
-  let tag = input.prop("tagName").toLowerCase();
+  let tag = input.prop('tagName').toLowerCase();
   // get value of input
   let value = input.val();
   // get id of input
-  let id = input.attr("id");
-  // red out the custom attribute "optional" to check if the input is required
-  let optional = input.attr("optional");
-  // if the attribute is "true" it will be true and in every other case (if it's not set or set to "false" for example) it will be false
-  if (optional == "true") {
+  let id = input.attr('id');
+  // red out the custom attribute 'optional' to check if the input is required
+  let optional = input.attr('optional');
+  // if the attribute is 'true' it will be true and in every other case (if it's not set or set to "false" for example) it will be false
+  if (optional == 'true') {
     optional = true;
   } else {
     optional = false;
@@ -112,19 +112,19 @@ function validateInput(input, focus, highlight) {
   // get next element of input
   let $nextElem = input.next();
   // get class of next element to check if this input already has an error message
-  let $nextElemClass = $nextElem.attr("class");
+  let $nextElemClass = $nextElem.attr('class');
   // initialize the message variable so it's always available
-  let message = "";
+  let message = '';
 
   // choose which error message should be shown
   // if the input is empty
-  if (value == "") {
+  if (value == '') {
     // and if the input is not market as optional (not set with && for the else, because the else should be independent from the optional property)
     if (!optional) {
       message = errorMessageEmpty;
     }
     // if the input is filled (comes from the if) and it's id is the mailID check for mail validation => if it's empty it's enough to check for requirement because it's allowed to leave it empty. But if the user wants to fill the input it should be valid indepented from the fact that it's optional
-  } else if (input.attr("id") == mailId) {
+  } else if (input.attr('id') == mailId) {
     // count the @ and dots with a simple regex to check if it's really an email
     // regex explanation: the character between the slashes is the character that will be searched and the g states that it should search for every occurence and not only the first
     // the || is there to return an empty list if the regex won't find a character to prevent the .length() from throwing an error
@@ -134,20 +134,20 @@ function validateInput(input, focus, highlight) {
 
     // the final validation => check if the mail has exactly one @ and minimum one dot and set the error message regarding the result
     if (countAt == 1 && countDot >= 1) {
-      message = "";
+      message = '';
     } else {
       message = errorMessageInvalidMail;
       // add more information for the user if the input is optional
       if (optional) {
-        message += " - Da das Feld optional ist, kann es auch komplett leer gelassen werden."
+        message += ' - Da das Feld optional ist, kann es auch komplett leer gelassen werden.'
       }
     }
   }
 
-  // if (value == "" && !optional) {
+  // if (value == '' && !optional) {
   //   message = errorMessageEmpty;
   //   // if it is already filled and it's the mail input check if it's valid
-  // } else if (input.attr("id") == mailId) {
+  // } else if (input.attr('id') == mailId) {
   //   // count the @ and dots with a simple regex to check if it's really an email
   //   // regex explanation: the character between the slashes is the character that will be searched and the g states that it should search for every occurence and not only the first
   //   // the || is there to return an empty list if the regex won't find a character to prevent the .length() from throwing an error
@@ -157,7 +157,7 @@ function validateInput(input, focus, highlight) {
   //
   //   // the final validation => check if the mail has exactly one @ and minimum one dot and set the error message regarding the result
   //   if (countAt == 1 && countDot >= 1) {
-  //     message = "";
+  //     message = '';
   //   } else {
   //     message = errorMessageInvalidMail;
   //   }
@@ -171,17 +171,17 @@ function validateInput(input, focus, highlight) {
       $nextElem.html(`${message}`);
       // if it should be highlighted, put the jquery ui bounce effect on it
       if (highlight) {
-        $nextElem.effect("bounce", "slow");
+        $nextElem.effect('bounce', 'slow');
       }
       // if there is no error message create one
     } else {
       // create the error message with a formatted string and put it in the DOM right after the corresponding input by using the vanilla js function insertAdjacentHTML (also tried jquery functions but they didn't completely work).
       // used document.querySelector here to directly get the html object and not the jquery object since we need to use a vanilla js function
-      document.querySelector(`${tag}#${id}`).insertAdjacentHTML("afterend",
-        `<p class="${errorMessageClass}">${message}</p>`);
+      document.querySelector(`${tag}#${id}`).insertAdjacentHTML('afterend',
+        `<p class='${errorMessageClass}'>${message}</p>`);
     }
     // add the class to the input element so the styling can be adjusted in CSS
-    input.addClass("error");
+    input.addClass('error');
     // if it should be focused it will focus the input
     if (focus) {
       $(`input#${id}`)[0].focus();
@@ -192,11 +192,11 @@ function validateInput(input, focus, highlight) {
     // if there is no error this time clear potential error messages from before and return true
   } else {
     // check if there already is an error message
-    if ($nextElemClass == "error_message") {
+    if ($nextElemClass == 'error_message') {
       // remove the error message
       $nextElem.remove();
       // remove the error class for styles
-      input.removeClass("error");
+      input.removeClass('error');
     }
     // return true to further work with that
     return true
@@ -220,10 +220,10 @@ function sendMail() {
     // set recipient
     recipientMail = 'kontakt@samuelwoelfl.de';
     // get all the values for the mail
-    senderMail = $("#mail").val();
-    subject = 'Mail von Website: ' + $("#subject").val();
+    senderMail = $('#mail').val();
+    subject = 'Mail von Website: ' + $('#subject').val();
     // format the message body and include the sender Mail at the end.
-    body = $("#message").val() + '%0D%0A%0D%0A%0D%0A' + 'Kontakt-E-Mail: ' + senderMail;
+    body = $('#message').val() + '%0D%0A%0D%0A%0D%0A' + 'Kontakt-E-Mail: ' + senderMail;
     window.open(`mailto:${recipientMail}?subject=${subject}&body=${body}`);
   }
 }

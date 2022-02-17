@@ -10,7 +10,7 @@ let scoreX = 0;
 let scoreO = 0;
 
 // set the current player in the beginning;
-let currentPlayer = "X";
+let currentPlayer = 'X';
 
 // store all win combinations to check for win later
 let winCombinations = [
@@ -27,10 +27,10 @@ let winCombinations = [
 // do things when the DOM is loaded
 $(document).ready(function() {
   // set the current player info in the html
-  $("#current_player").html(currentPlayer);
+  $('#current_player').html(currentPlayer);
   // get the html elements in variables
-  $winStateSpan = $("#win_state");
-  $allBoxes = $(".box");
+  $winStateSpan = $('#win_state');
+  $allBoxes = $('.box');
   // fill all existing information from cookies, so you could continue playing where you stopped, even after reloading
   fillGameInfoFromCookies();
   // directly check for win, if you reload while anybody won
@@ -39,7 +39,7 @@ $(document).ready(function() {
   // Event handler that registers when one of the box is clicked
   $allBoxes.click(function() {
     // only do stuff if it's not already filled
-    if (!$(this).attr("class").includes("filled")) {
+    if (!$(this).attr('class').includes('filled')) {
       // write the mark of the current player in the box
       $(this).html(currentPlayer);
       // add the filled class to this box so it cannot be clicked again
@@ -61,16 +61,16 @@ $(document).ready(function() {
 // function that just switches the players and cares about all the stuff coming with it like writing it to html and storing it into cookies
 function switchPlayer() {
   // check which is the player right now and change it depending on this
-  if (currentPlayer == "X") {
-    currentPlayer = "O";
+  if (currentPlayer == 'X') {
+    currentPlayer = 'O';
   } else {
-    currentPlayer = "X";
+    currentPlayer = 'X';
   }
   // ...and write it in the html
-  $("#current_player").html(currentPlayer);
+  $('#current_player').html(currentPlayer);
   // ... and put it into cookies
-  if (Cookies.get("cookiesAccepted") == "true") {
-    Cookies.set("currentPlayer", currentPlayer);
+  if (Cookies.get('cookiesAccepted') == 'true') {
+    Cookies.set('currentPlayer', currentPlayer);
   }
 }
 
@@ -85,23 +85,23 @@ function updateStates(index) {
   });
 
   // put it into cookies
-  if (Cookies.get("cookiesAccepted") == "true") {
-    Cookies.set("tictactoeStates", states);
+  if (Cookies.get('cookiesAccepted') == 'true') {
+    Cookies.set('tictactoeStates', states);
   }
 
   // if a user clicked a box (this is when an index is provided) check which user must have did it and then add this box to the users boxes list (playerX or playerO)
   if (index != undefined) {
-    if (currentPlayer == "X") {
+    if (currentPlayer == 'X') {
       playerX.push(index);
       // update the cookie
-      if (Cookies.get("cookiesAccepted") == "true") {
-        Cookies.set("playerX", playerX);
+      if (Cookies.get('cookiesAccepted') == 'true') {
+        Cookies.set('playerX', playerX);
       }
     } else {
       playerO.push(index);
       // update the cookie
-      if (Cookies.get("cookiesAccepted") == "true") {
-        Cookies.set("playerO", playerO);
+      if (Cookies.get('cookiesAccepted') == 'true') {
+        Cookies.set('playerO', playerO);
       }
     }
   }
@@ -114,27 +114,27 @@ function fillGameInfoFromCookies() {
   // try statement to prevent errors, when there are no cookies
   try {
     // fill the boxes - get the cookies first
-    statesCookie = Cookies.get("tictactoeStates");
+    statesCookie = Cookies.get('tictactoeStates');
     // only run it if the cookie exists
     if (statesCookie != undefined) {
       // transform the cookie from a string to a list with strings again
-      states = cookiesStringToList(statesCookie, "strings");
+      states = cookiesStringToList(statesCookie, 'strings');
       $.each($allBoxes, function(i, item) {
         $(this).html(states[i]);
       });
       // fill the player variables from cookies - "|| []" so that it will return an empty list if there is no cookie
-      playerX = (cookiesStringToList(Cookies.get("playerX"), "numbers") || [])
-      playerO = (cookiesStringToList(Cookies.get("playerO"), "numbers") || [])
+      playerX = (cookiesStringToList(Cookies.get('playerX'), 'numbers') || [])
+      playerO = (cookiesStringToList(Cookies.get('playerO'), 'numbers') || [])
 
       // set the scores
-      scoreX = (parseInt(Cookies.get("scoreX")) || 0);
-      scoreO = (parseInt(Cookies.get("scoreO")) || 0);
-      $("#scoreX").html(scoreX);
-      $("#scoreO").html(scoreO);
+      scoreX = (parseInt(Cookies.get('scoreX')) || 0);
+      scoreO = (parseInt(Cookies.get('scoreO')) || 0);
+      $('#scoreX').html(scoreX);
+      $('#scoreO').html(scoreO);
 
       // set the current player
-      currentPlayer = Cookies.get("currentPlayer");
-      $("#current_player").html(currentPlayer);
+      currentPlayer = Cookies.get('currentPlayer');
+      $('#current_player').html(currentPlayer);
     }
   } catch (e) {}
 }
@@ -151,7 +151,7 @@ function cookiesStringToList(string, type) {
     // create a list from the string by splitting it at every comma
     list = stringClean.split(',');
     // if the type is set to "numbers" it will also transform every value to an integer
-    if (type == "numbers") {
+    if (type == 'numbers') {
       $.each(list, function(i, item) {
         list[i] = parseInt(list[i]);
       });
@@ -167,11 +167,11 @@ function cookiesStringToList(string, type) {
 
 // simple function that updates the score in the html and in the cookies
 function updateCount() {
-  $("#scoreX").html(scoreX);
-  $("#scoreO").html(scoreO);
-  if (Cookies.get("cookiesAccepted") == "true") {
-    Cookies.set("scoreX", scoreX);
-    Cookies.set("scoreO", scoreO);
+  $('#scoreX').html(scoreX);
+  $('#scoreO').html(scoreO);
+  if (Cookies.get('cookiesAccepted') == 'true') {
+    Cookies.set('scoreX', scoreX);
+    Cookies.set('scoreO', scoreO);
   }
 }
 
@@ -185,16 +185,16 @@ function checkForWin() {
     // check if player X fulfills this combination in any order
     if (playerX.includes(c[0]) && playerX.includes(c[1]) && playerX.includes(c[2])) {
       // end the game and provide X as the winner and c as the winning combination for the highlight
-      restartGame("X", c);
+      restartGame('X', c);
       // stop the loop if the game is finished
       break
       // check if player O fulfills this combination in any order
     } else if (playerO.includes(c[0]) && playerO.includes(c[1]) && playerO.includes(c[2])) {
       // same as player X for player O
-      restartGame("O", c);
+      restartGame('O', c);
       break
-      // if none of the players has won check if it's the last combination (to prevent from thinking it's a draw if one of the players won with one of the later combinations) and if all the boxes are filled...
-    } else if (i == (winCombinations.length - 1) && !states.includes("")) {
+      // if none of the players has won, check if it's the last combination (to prevent from thinking it's a draw if one of the players won with one of the later combinations) and if the states got filled and if they all not only contain nothing ...
+    } else if (i == (winCombinations.length - 1) && states.length == 9 && !states.includes('')) {
       // ... if so end the game with a draw
       restartGame(null, null);
       break
@@ -212,21 +212,21 @@ function restartGame(winner, combination) {
     $winStateSpan.html(`${winner} gewinnt`);
     // block all boxes by adding the "filled" class so that you can't play anymore
     $.each($allBoxes, function(i, item) {
-      $(this).addClass("filled");
+      $(this).addClass('filled');
     });
     // highlight the winning combination
     highlightWin(combination);
     // count up the score
-    if (winner == "X") {
+    if (winner == 'X') {
       scoreX += 1;
-    } else if (winner == "O") {
+    } else if (winner == 'O') {
       scoreO += 1;
     }
     // update the count in the html
     updateCount();
   } else {
     // if it's a draw write in the html
-    $winStateSpan.html("Unentschieden");
+    $winStateSpan.html('Unentschieden');
   }
 
   // wait for 2s and then reset the game
@@ -239,7 +239,7 @@ function restartGame(winner, combination) {
 // function that highlights the boxes in the winning combination by adding a class
 function highlightWin(combination) {
   $.each(combination, function(i, item) {
-    $($allBoxes[this]).addClass("win");
+    $($allBoxes[this]).addClass('win');
   });
 }
 
@@ -251,17 +251,17 @@ function reset() {
   playerX = [];
   playerO = [];
   // clear the game variables in the cookies
-  if (Cookies.get("cookiesAccepted") == "true") {
-    Cookies.set("tictactoeStates", states);
-    Cookies.set("playerX", playerX);
-    Cookies.set("playerO", playerO);
+  if (Cookies.get('cookiesAccepted') == 'true') {
+    Cookies.set('tictactoeStates', states);
+    Cookies.set('playerX', playerX);
+    Cookies.set('playerO', playerO);
   }
   // reset all the boxes to their beginning state
   $.each($allBoxes, function(i, item) {
-    $(this).html("");
-    $(this).removeClass("filled");
-    $(this).removeClass("win");
+    $(this).html('');
+    $(this).removeClass('filled');
+    $(this).removeClass('win');
     // reset the win span to show the current player
-    $winStateSpan.html(`<span id="current_player">${currentPlayer}</span> ist am Zug`);
+    $winStateSpan.html(`<span id='current_player'>${currentPlayer}</span> ist am Zug`);
   });
 }

@@ -9,13 +9,13 @@ let recTranslate = 0;
 let $carouselList, widthToScroll, translateIncrem, autoScrollInterval;
 
 // window on load since we need to wait till the images are loaded here
-$(window).on("load", function() {
+$(window).on('load', function() {
 
   // get elements from html
-  $prevButton = $(".carousel-prev-rec");
-  $nextButton = $(".carousel-next-rec");
-  $carouselList = $(".carousel-list");
-  $listItems = $(".carousel-listitem");
+  $prevButton = $('.carousel-prev-rec');
+  $nextButton = $('.carousel-next-rec');
+  $carouselList = $('.carousel-list');
+  $listItems = $('.carousel-listitem');
   // count how many items are in list
   itemsCount = $listItems.length;
 

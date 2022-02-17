@@ -1,9 +1,9 @@
 // wait till the DOM is ready
 $(document).ready(function() {
   // get html elements
-  let $cursors = $(".custom-cursor");
-  let $externalLinkCursor = $(".custom-cursor#external-link");
-  let $projects = $(".project[onclick]");
+  let $cursors = $('.custom-cursor');
+  let $externalLinkCursor = $('.custom-cursor#external-link');
+  let $projects = $('.project[onclick]');
   // initialize posX and posY
   let posX, posY;
 

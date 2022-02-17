@@ -5,8 +5,8 @@ $(document).ready(function() {
   let currentURL = location.href;
 
   // get elements from html
-  let $sun = $("#sun_icon");
-  let $moon = $("#moon_icon");
+  let $sun = $('#sun_icon');
+  let $moon = $('#moon_icon');
   let html = document.querySelector('html');
 
   // initialize variables
@@ -23,13 +23,13 @@ $(document).ready(function() {
         }
       },
       color: {
-        value: "#FFFFFF"
+        value: '#FFFFFF'
       },
       shape: {
-        type: "circle",
+        type: 'circle',
         stroke: {
           width: 0,
-          color: "#000000"
+          color: '#000000'
         },
       },
       opacity: {
@@ -55,17 +55,17 @@ $(document).ready(function() {
       line_linked: {
         enable: true,
         distance: 150,
-        color: "#FFFFFF",
+        color: '#FFFFFF',
         opacity: 0.4,
         width: 1
       },
       move: {
         enable: true,
         speed: 1.5,
-        direction: "none",
+        direction: 'none',
         random: false,
         straight: false,
-        out_mode: "out",
+        out_mode: 'out',
         bounce: false,
         attract: {
           enable: false,
@@ -75,15 +75,15 @@ $(document).ready(function() {
       }
     },
     interactivity: {
-      detect_on: "canvas",
+      detect_on: 'canvas',
       events: {
         onhover: {
           enable: true,
-          mode: "repulse"
+          mode: 'repulse'
         },
         onclick: {
           enable: true,
-          mode: "push"
+          mode: 'push'
         },
         resize: true
       },
@@ -152,7 +152,7 @@ $(document).ready(function() {
     requestAnimationFrame(update);
 
     // start particlesJS
-    particlesJS("particles-js", info);
+    particlesJS('particles-js', info);
   }
 
   // ------------ Particle.js End ----------------
@@ -190,10 +190,10 @@ $(document).ready(function() {
     // only do this if the page is not galerie or tictactoe
     if (!currentURL.includes('galerie') && !currentURL.includes('tictactoe')) {
       // set the color of the particles and lines in particlesJS
-      info["particles"]["color"]["value"] = `${color}`;
-      info["particles"]["line_linked"]["color"] = `${color}`;
+      info['particles']['color']['value'] = `${color}`;
+      info['particles']['line_linked']['color'] = `${color}`;
       // rerun particlesJS
-      particlesJS("particles-js", info);
+      particlesJS('particles-js', info);
     }
 
   }

@@ -19,19 +19,19 @@ $(document).ready(function() {
 
   // get all banners from html
   $banners = $('.start_banner');
-  $cookieBanner = $("#cookie_banner");
-  $acceptedBanner = $("#accepted_banner");
-  $deniedBanner = $("#denied_banner");
-  $welcomeBanner = $("#welcome_banner");
+  $cookieBanner = $('#cookie_banner');
+  $acceptedBanner = $('#accepted_banner');
+  $deniedBanner = $('#denied_banner');
+  $welcomeBanner = $('#welcome_banner');
   // get all buttons from html
-  $acceptCookiesButton = $("#accept_cookies");
-  $denieCookiesButton = $("#denie_cookies");
-  $resetCookiesButton = $("#reset_cookies");
-  $toggleCookiesButton = $("#toogle_cookies_button");
-  $toggleCookiesButton = $("#toogle_cookies_button");
+  $acceptCookiesButton = $('#accept_cookies');
+  $denieCookiesButton = $('#denie_cookies');
+  $resetCookiesButton = $('#reset_cookies');
+  $toggleCookiesButton = $('#toogle_cookies_button');
+  $toggleCookiesButton = $('#toogle_cookies_button');
   // get other elements from html
-  $cookieToggleModal = $(".cookie_toggle_modal");
-  $bannerCloseButtons = $(".banner_close_button");
+  $cookieToggleModal = $('.cookie_toggle_modal');
+  $bannerCloseButtons = $('.banner_close_button');
 
   // get the cookiesAccepted cookie - if it doens't exist it will return false
   let cookiesAccepted = Cookies.get('cookiesAccepted');
@@ -39,7 +39,7 @@ $(document).ready(function() {
   if (cookiesAccepted === undefined) {
     cookiesAccepted = false;
     // set it to boolean true if it returns the string "true"
-  } else if (cookiesAccepted == "true") {
+  } else if (cookiesAccepted == 'true') {
     cookiesAccepted = true;
   }
 
@@ -49,7 +49,7 @@ $(document).ready(function() {
   if (welcomeShown === undefined) {
     welcomeShown = false;
     // set it to boolean true if it returns the string "true"
-  } else if (welcomeShown == "true") {
+  } else if (welcomeShown == 'true') {
     welcomeShown = true;
   }
 
@@ -62,7 +62,7 @@ $(document).ready(function() {
     // if he accepted cookies
   } else {
     // adjust the button text in the bottom right modal
-    $toggleCookiesButton.html("Cookie-Wahl zurücksetzen");
+    $toggleCookiesButton.html('Cookie-Wahl zurücksetzen');
     // check if welcome got shown
     if (!welcomeShown) {
       // if it wasn't shown already, show the welcome banner with the showToast function
@@ -87,7 +87,7 @@ $(document).ready(function() {
     $cookieBanner.fadeOut(100);
     showToast($deniedBanner);
     // adjust button text in bottom right modal
-    $toggleCookiesButton.html("Cookies akzeptieren");
+    $toggleCookiesButton.html('Cookies akzeptieren');
   });
 
   $toggleCookiesButton.click(function() {
@@ -97,7 +97,7 @@ $(document).ready(function() {
     if (cookiesAccepted === undefined) {
       // run the accept cookies function if the cookies aren't accepted
       acceptCookies();
-    } else if (cookiesAccepted == "true") {
+    } else if (cookiesAccepted == 'true') {
       // run reset cookies function to reset all cookies
       resetCookies();
     }
@@ -113,8 +113,8 @@ $(document).ready(function() {
 // function to accept cookies
 function acceptCookies() {
   // set the cookie, change button text and show the corresponding banner
-  Cookies.set('cookiesAccepted', "true");
-  $toggleCookiesButton.html("Cookie-Wahl zurücksetzen");
+  Cookies.set('cookiesAccepted', 'true');
+  $toggleCookiesButton.html('Cookie-Wahl zurücksetzen');
   showToast($acceptedBanner);
 }
 
@@ -122,14 +122,14 @@ function acceptCookies() {
 function resetCookies() {
   // run the deleteAllCookies function to delete all cookies, change button text and show banner
   deleteAllCookies();
-  $toggleCookiesButton.html("Cookies akzeptieren");
+  $toggleCookiesButton.html('Cookies akzeptieren');
   showToast($deniedBanner);
 }
 
 // function to show a toast message
 function showToast($banner) {
   // get the show duration set by a custom attribute in html for easier manipulation
-  let showDuration = $banner.attr("show-duration");
+  let showDuration = $banner.attr('show-duration');
   // set the animation-duration of the cooldown ring to the show duration so that it shows how long the banner will stay
   $banner.find('.progress-ring_circle').css('animation-duration', `${showDuration / 1000}s`);
   $banner.fadeIn(100);
