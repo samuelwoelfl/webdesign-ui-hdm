@@ -25,7 +25,7 @@
 
 :root[data-theme="theme-dark"] {
   /* Colors: */
-  --primary: #6b31f5;
+  --primary: #773dff;
   --primary-light: #865ee4;
   --secondary: #e9e81f;
   --card-border: #FFFFFF12;
@@ -39,7 +39,7 @@
 }
 
 :root[data-theme="theme-light"] {
-  --primary: #6b31f5;
+  --primary: #773dff;
   --primary-light: #865ee4;
   --secondary: #d6c400;
   --card-border: #00000012;
@@ -140,7 +140,8 @@ button:active, input[type=submit]:active {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: var(--content-max-width);
+  width: var(--content-width);
+  max-width: var(--content-max-width);
   left: calc((100vw - var(--content-max-width))/2);
   bottom: 2vh;
   padding: 1% 1.5%;
@@ -424,7 +425,6 @@ footer a:hover {
   .start_banner {
     justify-content: flex-start;
     align-items: flex-start;
-    width: var(--content-width);
     left: calc((100vw - var(--content-width))/2);
     padding: 4% 5%;
   }

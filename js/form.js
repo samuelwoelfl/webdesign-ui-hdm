@@ -217,8 +217,14 @@ function sendMail() {
   });
   // if none of the input validations returned false open the mail program (can't send mails directly with vanilla js so this is the closest)
   if (!valids.includes(false)) {
-    // TODO: insert better subject and properties
-    window.open('mailto:test@example.com?subject=subject&body=body');
+    // set recipient
+    recipientMail = 'kontakt@samuelwoelfl.de';
+    // get all the values for the mail
+    senderMail = $("#mail").val();
+    subject = 'Mail von Website: ' + $("#subject").val();
+    // format the message body and include the sender Mail at the end.
+    body = $("#message").val() + '%0D%0A%0D%0A%0D%0A' + 'Kontakt-E-Mail: ' + senderMail;
+    window.open(`mailto:${recipientMail}?subject=${subject}&body=${body}`);
   }
 }
 

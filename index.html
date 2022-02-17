@@ -183,20 +183,6 @@
             <p class="date">2021</p>
           </div>
 
-          <!-- <div class="project" onclick="window.open('https://ryven.org/')">
-            <div class="container">
-              <div class="image">
-                <img src="img/projects/ryven.png" alt="">
-              </div>
-              <div class="info">
-                <h3 class="name">Ryven</h3>
-                <p class="work">Webdesign & -development</p>
-              </div>
-            </div>
-            <p class="branche">Technologie</p>
-            <p class="date">2021</p>
-          </div> -->
-
           <div class="project fade" onclick="window.open('https://danica-sattink-rath.de/')">
             <div class="container">
               <div class="image">
@@ -218,6 +204,20 @@
               </div>
               <div class="info">
                 <h3 class="name">Moodle Chrome Extension</h3>
+                <p class="work">Design & Development</p>
+              </div>
+            </div>
+            <p class="branche">Bildung</p>
+            <p class="date">2021</p>
+          </div>
+
+          <div class="project fade" onclick="window.open('tictactoe.html','_self')">
+            <div class="container">
+              <div class="image">
+                <img src="img/projects/tictactoe.png" alt="">
+              </div>
+              <div class="info">
+                <h3 class="name">TicTacToe Web-Game</h3>
                 <p class="work">Design & Development</p>
               </div>
             </div>
@@ -399,13 +399,16 @@
         <h2>Kontakt</h2>
         <form action="javascript:sendMail()">
           <label for="prename">Vorname:</label>
-          <input type="text" id="prename" name="prename" value="" optional="true">
+          <input type="text" id="prename" name="prename" value="">
 
           <label for="name">Nachname:</label>
           <input type="text" id="name" name="name" value="">
 
           <label for="mail">E-Mail:</label>
           <input type="text" id="mail" name="email" value="">
+
+          <label for="subject">Betreff (optional):</label>
+          <input type="text" id="subject" name="subject" value="" optional="true">
 
           <label for="message">Nachricht:</label>
           <textarea name="message" id="message" rows="8" cols="80"></textarea>

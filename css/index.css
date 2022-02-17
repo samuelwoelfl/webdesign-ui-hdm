@@ -114,7 +114,7 @@ canvas {
   transition: .4s ease;
 }
 
-.project[onclick*="window"]:hover {
+.project[onclick]:hover {
   cursor: none;
 }
 

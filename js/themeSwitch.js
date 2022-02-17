@@ -1,13 +1,18 @@
+// document ready to wait till the DOM is ready
 $(document).ready(function() {
 
+  // get the current url
   let currentURL = location.href;
 
-  // Elemente aus HTML bekommen
+  // get elements from html
   let $sun = $("#sun_icon");
   let $moon = $("#moon_icon");
   let html = document.querySelector('html');
 
+  // initialize variables
   let theme, color;
+
+  // set all the values for the particlesJS library
   let info = {
     particles: {
       number: {
@@ -110,9 +115,13 @@ $(document).ready(function() {
     },
     retina_detect: true
   }
+
+  // get the theme from cookies
   let cookiesTheme = Cookies.get('theme');
+  // if there is no cookie...
   if (cookiesTheme === undefined) {
     let systemTheme;
+    // ...look at the browser/os settings to adjust it depending on the user preferences
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       systemTheme = 'dark';
     } else {
@@ -123,56 +132,67 @@ $(document).ready(function() {
     theme = cookiesTheme;
   }
 
-  if (theme == 'dark') {
-    switchTheme('dark');
-  } else {
-    switchTheme('light');
-  }
+  // set the theme
+  switchTheme(theme);
 
 
   // ------------- Particle.js ------------------
 
-  // don't run particle js on galerie page
-
+  // don't run particlesJS on galerie or tictactoe page
   if (!currentURL.includes('galerie') && !currentURL.includes('tictactoe')) {
+    // get the current text color to set the particles color based on the theme
     color = getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trimStart();
+    // initialize variables
     var count_particles, stats, update;
 
+    // update function from particlesJS
     update = function() {
       requestAnimationFrame(update);
     };
     requestAnimationFrame(update);
+
+    // start particlesJS
     particlesJS("particles-js", info);
   }
 
   // ------------ Particle.js End ----------------
 
 
+  // event handler to check if the sun icon get's clicked and then change the theme
   $sun.click(function() {
     switchTheme('dark');
   });
+  // same for the moon icon
   $moon.click(function() {
     switchTheme('light');
   });
 
+
+  // function to switch the theme
   function switchTheme(theme) {
+    // change the icon
     if (theme === 'light') {
-      // Change Icon
       $sun.show();
       $moon.hide();
     } else {
-      // Change Icon
       $sun.hide();
       $moon.show();
     }
+
+    // set the theme as attribute in the html
     html.dataset.theme = `theme-${theme}`;
     if (Cookies.get('cookiesAccepted') == 'true') {
       Cookies.set('theme', `${theme}`);
     }
+
+    // get the current text color
     color = getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trimStart();
+    // only do this if the page is not galerie or tictactoe
     if (!currentURL.includes('galerie') && !currentURL.includes('tictactoe')) {
+      // set the color of the particles and lines in particlesJS
       info["particles"]["color"]["value"] = `${color}`;
       info["particles"]["line_linked"]["color"] = `${color}`;
+      // rerun particlesJS
       particlesJS("particles-js", info);
     }
 
