@@ -12,6 +12,11 @@ let scoreO = 0;
 // set the current player in the beginning;
 let currentPlayer = 'X';
 
+// initialize timer
+let gameTime = 0;
+// set interval to count up the gameTimer
+let timerVariable = setInterval(countTimer, 1000);
+
 // store all win combinations to check for win later
 let winCombinations = [
   [0, 1, 2],
@@ -264,4 +269,20 @@ function reset() {
     // reset the win span to show the current player
     $winStateSpan.html(`<span id='current_player'>${currentPlayer}</span> ist am Zug`);
   });
+}
+
+
+// function that counts up the timer
+function countTimer() {
+  // add one second to the timer
+  gameTime += 1;
+  // calculate all the hours, minuts and seconds and use padStart to give them leading zeros if the values are just one digit
+  let hours = Math.floor(gameTime / 3600);
+  let h = String(hours).padStart(2, "0");
+  let minuts = Math.floor((gameTime - hours * 3600) / 60);
+  let m = String(minuts).padStart(2, "0");
+  let seconds = gameTime - (hours * 3600 + minuts * 60);
+  let s = String(seconds).padStart(2, "0");
+  // write it into html
+  $('#gameTime').html(`${h}:${m}:${s}`);
 }

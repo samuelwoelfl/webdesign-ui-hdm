@@ -4,7 +4,7 @@ h2 {
 }
 
 .game {
-  margin: 7vh auto 15vh auto;
+  margin: 7vh auto 7vh auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -61,6 +61,12 @@ h2 {
   text-align: center;
   margin-top: 1vh;
   font-size: 1.5rem;
+}
+
+#timer {
+  margin: 0 auto 11vh auto;
+  text-align: center;
+  color: var(--text-tertiary);
 }
 
 @media only screen and (max-width: 450px) {
