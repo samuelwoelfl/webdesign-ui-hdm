@@ -73,8 +73,6 @@ html, body {
 
 body {
   background-color: var(--bg-dark);
-  /* transition: background-color 2s ease; */
-  /* padding: 0 2%; */
 }
 
 a {
@@ -95,8 +93,6 @@ h2 {
 h2:not(.landingpage h2) {
   color: var(--primary);
   font-size: 2rem;
-  /* -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: var(--primary); */
 }
 
 button {
