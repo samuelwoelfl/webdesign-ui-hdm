@@ -67,6 +67,10 @@
   color: #fff;
 }
 
+::placeholder {
+  opacity: .5;
+}
+
 html, body {
   overflow-x: hidden;
 }
