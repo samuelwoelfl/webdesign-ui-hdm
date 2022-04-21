@@ -3,7 +3,7 @@ $(document).ready(function() {
   // get html elements
   let $cursors = $('.custom-cursor');
   let $externalLinkCursor = $('.custom-cursor#external-link');
-  let $projects = $('.project[onclick]');
+  let $projects = $('.project[onclick], .project[href]');
   // initialize posX and posY
   let posX, posY;
 
@@ -13,6 +13,13 @@ $(document).ready(function() {
   }, function() {
     $externalLinkCursor.fadeOut(0);
   });
+
+  // $('.project[onclick="*pdf"]').hover(function() {
+  //   $('.custom-cursor svg').css('transform', 'rotate(135deg)');
+  // }, function() {
+  //   $('.custom-cursor svg').css('transform', 'rotate(0deg)');
+  //   // console.log("out");
+  // })
 
   // always position the custom cursor right at the real cursor with the mousemove event handler
   $(document).mousemove(function() {

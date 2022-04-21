@@ -20,6 +20,10 @@ $(document).ready(function() {
   // run the fillInputs function with all inputs to populate them with the available values from cookies
   fillInputs($inputs);
 
+  $('#submit').click(function() {
+    sendMail();
+  });
+
   // add an event listener to safe an input value to a cookie when the input value changes
   $inputs.on('input', function() {
     // get name attribute of input
@@ -218,13 +222,14 @@ function sendMail() {
   // if none of the input validations returned false open the mail program (can't send mails directly with vanilla js so this is the closest)
   if (!valids.includes(false)) {
     // set recipient
-    recipientMail = 'kontakt@samuelwoelfl.de';
+    // recipientMail = 'kontakt@samuelwoelfl.de';
     // get all the values for the mail
-    senderMail = $('#mail').val();
-    subject = 'Mail von Website: ' + $('#subject').val();
+    // senderMail = $('#mail').val();
+    // subject = 'Mail von Website: ' + $('#subject').val();
     // format the message body and include the sender Mail at the end.
-    body = $('#message').val() + '%0D%0A%0D%0A%0D%0A' + 'Kontakt-E-Mail: ' + senderMail;
-    window.open(`mailto:${recipientMail}?subject=${subject}&body=${body}`);
+    // body = $('#message').val() + '%0D%0A%0D%0A%0D%0A' + 'Kontakt-E-Mail: ' + senderMail;
+    // window.open(`mailto:${recipientMail}?subject=${subject}&body=${body}`);
+    $('#contact-formular').submit();
   }
 }
 

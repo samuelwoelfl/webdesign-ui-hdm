@@ -129,7 +129,7 @@ button.secondary:hover {
   background-color: var(--bg-dark);
 }
 
-button:active, input[type=submit]:active {
+button:active, span#submit:active {
   transform: scale(0.95);
 }
 
@@ -382,9 +382,26 @@ footer .content {
 }
 
 footer .content .column {
+  /* width: 20%; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+
+footer .column:nth-child(1) {
+  width: 19%;
+}
+
+footer .column:nth-child(2) {
+  width: 16%;
+}
+
+footer .column:nth-child(3) {
+  width: 12%;
+}
+
+footer .column:nth-child(4) {
+  width: 13%;
 }
 
 footer .column h3 {

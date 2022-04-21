@@ -97,7 +97,7 @@ canvas {
 }
 
 .projects-list .project .container .image {
-  width: 35%;
+  width: 42%;
   margin-right: 8%;
   border-radius: 6px;
   overflow: hidden;
@@ -114,8 +114,12 @@ canvas {
   transition: .4s ease;
 }
 
-.project[onclick]:hover {
+.project[onclick]:hover, .project[href]:hover {
   cursor: none;
+}
+
+.project[href]:hover .custom-cursor svg {
+  transform: rotate(135deg);
 }
 
 .project:hover .image img {
@@ -135,7 +139,7 @@ canvas {
 }
 
 .about {
-  padding: 8% 0;
+  padding: 9% 0 11% 0;
 }
 
 .about h2 {
@@ -246,11 +250,11 @@ input.error, textarea.error {
   margin-bottom: 2%;
 }
 
-input[type=submit] {
-  display: block;
+span#submit {
+  display: inline-block;
   font-size: 1.2rem;
   padding: 1.3% 6%;
-  margin-top: 4%;
+  margin-top: 3%;
   color: #fff;
   background-color: var(--primary);
   border: none;
@@ -258,9 +262,14 @@ input[type=submit] {
   transition: .1s ease;
 }
 
-input[type=submit]:hover {
+span#submit:hover {
   cursor: pointer;
   background-color: var(--primary-light);
+}
+
+#sent_message span {
+  color: var(--primary-light);
+  font-size: 1.1rem;
 }
 
 @media only screen and (max-width: 450px) {
