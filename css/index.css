@@ -376,7 +376,7 @@ span#submit:hover {
 
   label {
     font-size: 1.1rem;
-    margin-top: 5%;
+    margin-top: 8%;
   }
 
   input:not([type=submit]), textarea {
@@ -393,5 +393,11 @@ span#submit:hover {
     font-size: 1.2rem;
     padding: 4% 15%;
     margin-top: 10%;
+  }
+
+  span#submit {
+    font-size: 1.1rem;
+    padding: 3.5% 8%;
+    margin-top: 4%;
   }
 }
