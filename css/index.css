@@ -154,6 +154,12 @@ canvas {
   font-weight: 500;
 }
 
+.about img {
+  margin: 2% 0;
+  width: 15%;
+  border-radius: 1008px;
+}
+
 .clients {
   background-color: var(--bg-lighter);
   width: 100%;
