@@ -1,0 +1,484 @@
+@import url("https://use.typekit.net/ifh7ihp.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  z-index: 0;
+}
+
+html, body {
+  width: 100%;
+  background-color: #F6F6F6;
+}
+
+/* ---------------------- General ---------------------- */
+
+h1, h2 {
+  font-family: "antique-olive", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 6rem;
+  line-height: 100%;
+}
+
+h2 {
+  font-size: 4rem;
+  line-height: 110%;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 140%;
+}
+
+p.subheading {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+header, .section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  margin: 35vh 0;
+  gap: 10vh;
+}
+
+.inner {
+  width: 87%;
+  /* max-width: 1330px; */
+  display: flex;
+  flex-direction: column;
+  gap: 12%;
+}
+
+.inner.horizontal {
+  flex-direction: row;
+}
+
+.section:not(.above_the_fold) .inner .left {
+  width: 40%;
+}
+
+.inner .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 5vh;
+}
+
+.inner .right > * {
+  width: 100%;
+}
+
+/* ---------------------- Header ---------------------- */
+
+header {
+  margin-top: 6vh;
+  margin-bottom: -14vh;
+}
+
+header .inner {
+  gap: 1%;
+}
+
+header .inner span {
+  font-weight: 700;
+}
+
+/* ---------------------- Above the fold ---------------------- */
+
+.above_the_fold {
+  margin: 16vh 0;
+}
+
+.above_the_fold h1 {
+  font-size: 7rem;
+  margin-bottom: 4%;
+}
+
+.above_the_fold h1::before{
+  background-image: url('../img/header_bulb.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  content: "";
+  top: 0;
+  margin-left: -270px;
+  z-index: -1;
+  width: 1000px;
+  height: 1000px;
+}
+
+.above_the_fold .inner {
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.above_the_fold .right {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.above_the_fold img.loading {
+  width: 73%;
+  margin-top: 10%;
+  max-width: 420px;
+}
+
+#cursor {
+  position: absolute;
+  width: 300px;
+  margin-top: 380px;
+  margin-right: 440px;
+}
+
+/* ---------------------- Wireframes ---------------------- */
+
+.wireframes h1::before{
+  background-image: url('../img/wireframes_bulb.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  content: "";
+  margin-top: -170px;
+  margin-left: -160px;
+  z-index: -1;
+  width: 600px;
+  height: 600px;
+}
+
+.wireframes .inner img {
+  border-radius: 8px;
+}
+
+.wireframe_screens {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.wireframe_screens .section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3vh;
+  margin: 0;
+}
+
+.wireframe_screens .section .screens {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+.wireframe_screens .section .screens img {
+  width: 15%;
+}
+
+/* ---------------------- Moodboard ---------------------- */
+
+.moodboard {
+  margin-top: 28%;
+}
+
+.moodboard h1::before{
+  background-image: url('../img/moodboard_bulb.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  content: "";
+  margin-top: -130px;
+  margin-left: -120px;
+  z-index: -1;
+  width: 560px;
+  height: 560px;
+}
+
+.moodboard .inner.image {
+  gap: 1%;
+}
+
+.moodboard .inner img {
+  box-shadow: 2px 2px 10px 0px #00000011;
+  border-radius: 8px;
+  width: 50%;
+}
+
+.moodboard .inner img#analog {
+  filter: brightness(1.1) contrast(0.9);
+}
+
+.goals_grid {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 3.3%;
+}
+
+.goals_grid .goal {
+  width: 30%;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start ;
+}
+
+.goals_grid .goal img {
+  width: 100%;
+  margin-bottom: 6%;
+  box-shadow: none;
+  border-radius: 8px;
+  box-shadow: 0px 2px 15px 0px #0000001f;
+}
+
+.goal h4 {
+  margin-bottom: 2%;
+  font-size: 1rem;
+}
+
+.goal p {
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 130%;
+}
+
+/* ---------------------- Prozess ---------------------- */
+
+.process {
+  margin-bottom: 0px;
+}
+
+.process h1::before{
+  background-image: url('../img/process_bulb.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  content: "";
+  margin-top: -260px;
+  margin-left: -120px;
+  z-index: -1;
+  width: 670px;
+  height: 670px;
+}
+
+.process .right {
+  align-items: center;
+}
+
+.process .right img.first {
+  border-radius: 8px;
+  box-shadow: 2px 2px 15px 0px #0000000f;
+}
+
+.process img.arrow-1 {
+  width: 50px;
+}
+
+.process img.arrow-2 {
+  width: 90px;
+}
+
+.process img.arrow-3 {
+  width: 33px;
+}
+
+/* ---------------------- Komponenten ---------------------- */
+
+.components {
+  margin-top: 10vh;
+  margin-bottom: 43vh;
+}
+
+.components h1::before{
+  background-image: url('../img/components_bulb.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  content: "";
+  margin-top: -220px;
+  margin-left: -120px;
+  z-index: -1;
+  width: 680px;
+  height: 680px;
+}
+
+.components_grid {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* flex-wrap: wrap; */
+}
+
+.components_grid img {
+  max-width: 30%;
+  margin-bottom: 5%;
+}
+
+/* ---------------------- Animationen ---------------------- */
+
+.animations h1::before{
+  background-image: url('../img/animations_bulb.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  content: "";
+  margin-top: -130px;
+  margin-left: -120px;
+  z-index: -1;
+  width: 710px;
+  height: 710px;
+}
+
+.animations .right .animations_grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.animations .right .animations_grid .container {
+  width: 45%;
+  margin-bottom: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animations .right .animations_grid .container img {
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.animations .right .animations_grid .container p {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* ---------------------- Animationen ---------------------- */
+
+.prototype {
+  margin-bottom: 10vh;
+  gap: 7vh;
+}
+
+.prototype h1::before{
+  background-image: url('../img/prototype_bulb.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  content: "";
+  margin-top: -240px;
+  margin-left: -120px;
+  z-index: -1;
+  width: 760px;
+  height: 760px;
+}
+
+.prototype .inner:last-child {
+  align-items: center;
+}
+
+.prototype a {
+  width: 26%;
+}
+
+.prototype a img {
+  width: 100%;
+}
+
+.prototype video {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 2px 2px 25px 0px #00000011;
+}
+
+/* ---------------------- Ressourcen ---------------------- */
+
+.ressources {
+  margin-top: 40vh;
+}
+
+.ressources h1::before{
+  background-image: url('../img/process_bulb.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  content: "";
+  margin-top: -220px;
+  margin-left: -120px;
+  z-index: -1;
+  width: 700px;
+  height: 700px;
+}
+
+.ressources .right {
+  width: 50%;
+  gap: 1vh;
+  margin-top: 1vh;
+}
+
+.callout {
+  width: 100%;
+  padding: 2% 3.5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 20px 0px #00000011;
+  border: 2px solid #dddddd;
+  gap: 3%;
+}
+
+.callout .icon {
+  width: 16px;
+  margin-top: 4px;
+}
+
+.callout a {
+  font-size: 1.2rem;
+  color: #A276FF;
+}
