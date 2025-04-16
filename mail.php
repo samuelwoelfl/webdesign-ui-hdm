@@ -21,7 +21,7 @@ $header .= "Content-type: text/html; charset=utf-8\r\n";
 $header .= "From: $mail \r\n";
 $header .= "X-Mailer: PHP ". phpversion();
 
-if ( ! empty($name) && ! empty($mail) && strlen($mail) > 1) {
+if ( ! empty($name) && ! empty($mail) && strlen($mailtext) > 2) {
   mail($empfaenger, $subject, $mailtext, $header) or die("Error!");
   header("location: index.html#success");
 }
